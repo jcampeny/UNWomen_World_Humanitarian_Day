@@ -1,7 +1,10 @@
-var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', 'ngAnimate', 'ngResource'])
+var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', 'ngAnimate', 'ngResource', 'sn.skrollr'])
 .controller("mainController", [ '$scope', 'ArrayService', function($scope, ArrayService) {
 
 
+}])
+.config(["snSkrollrProvider", function(snSkrollrProvider) {
+  snSkrollrProvider.config = { smoothScrolling: true};
 }])
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$resourceProvider', '$httpProvider',
 	function($stateProvider, $urlRouterProvider, $locationProvider, $resourceProvider, $httpProvider) {
@@ -33,4 +36,10 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 
 	});
 
+}])
+.run(["snSkrollr", function(snSkrollr) {
+  snSkrollr.init();
 }]);
+
+
+
