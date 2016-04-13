@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app" ng-controller="mainController">
+<html ng-controller="mainController">
   <head>
     <base href="/" />
     <meta charset="utf-8" />
@@ -19,8 +19,10 @@
 
     </script>
   </head>
-  <body>
-    <main ui-view autoscroll="false" id="skrollr-body"></main>
+  <body data-top="background:rgb(191,51,73);" data-center="background:rgb(234,174,139);" data-bottom="background:rgb(69,170,185);">
+    <div class="loading-page" ng-hide="loadingState == 'loaded'">LOADING</div>
+    <main ui-view autoscroll="false" ></main>
+
     <script type="text/javascript" src="dist/vendor.js"></script>
     <script type="text/javascript" src="dist/app.js"></script>
   </body>

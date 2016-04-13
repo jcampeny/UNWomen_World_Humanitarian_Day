@@ -8,11 +8,11 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 }])
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$resourceProvider', '$httpProvider',
 	function($stateProvider, $urlRouterProvider, $locationProvider, $resourceProvider, $httpProvider) {
-		$urlRouterProvider.otherwise("/section");
+		$urlRouterProvider.otherwise("/");
 
 		$stateProvider
 			.state('app', {url:'/', templateUrl: '../app/core/main.html', abstract: true})
-			.state('app.section', {url:'section', template: '<app-section></app-section>'});
+			.state('app.section', {url:'', template: '<app-section></app-section><app-section-fixed></app-section-fixed>'});
 
 		$locationProvider.html5Mode(true);
 		$resourceProvider.defaults.stripTrailingSlashes = false;
@@ -38,8 +38,43 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 
 }])
 .run(["snSkrollr", function(snSkrollr) {
+
   snSkrollr.init();
 }]);
 
+app.directive('screenDetector', ['$window', '$document','$filter','$timeout', function($window, $document, $filter, $timeout){
+	return {
+		restrict : 'AC',
+		scope: {
+			class : '@'
+		},
+		link : function(s, e, a) {
+			
+			$timeout(function() {$window.scrollTo(0,0);},0);
+		$document.bind('mousewheel DOMMouseScroll', function(){
+			
+			angular.forEach(e[0].classList, function(value, key) {
+  				if(value == "skrollable-between"){
+  					
+  				}
 
+  				
+			});
+		});
+
+        
+			/*
+			var $elem = $(elem);
+		    var $window = $(window);
+
+		    var docViewTop = $window.scrollTop();
+		    var docViewBottom = docViewTop + $window.height();
+
+		    var elemTop = $elem.offset().top;
+		    var elemBottom = elemTop + $elem.height();
+
+		    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));*/
+		}
+	};
+}]);
 
