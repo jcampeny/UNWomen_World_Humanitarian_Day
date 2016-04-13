@@ -9,7 +9,7 @@ angular.module('app').service("preloader",[ '$q', function($q) {
         img.addEventListener('load', function() {
             defered.resolve({value : 1});
         });
-
+//modificar valores si queremos % en el loaging
         return promise;
     }
     function preload(images) {
@@ -28,9 +28,6 @@ angular.module('app').service("preloader",[ '$q', function($q) {
                 defered.resolve();
             });   
         } 
-
-
-
         return promise;
     }
 }]);

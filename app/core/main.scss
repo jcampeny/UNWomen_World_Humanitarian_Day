@@ -7,3 +7,48 @@ body {
 	padding:0;
 	@include opacity(1); 
 }
+$font-1: 'Times New Roman';
+#fixed-elements{
+	#menu-burger{
+		position: fixed;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 30px;
+		height: 30px;
+	}
+	#donate{
+		position: fixed;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 30px;
+		height: 30px;
+	}
+}
+#section1{
+	min-height: 100vh;
+	width:100%;
+	position: relative;
+	.title{
+		font-family: $font-1;
+		margin: auto;
+		width: 60%;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%, -50%));
+	}
+}
+#section2{
+	width:100%;
+	position: relative;
+	.title{
+		margin: 5% 12%;
+		font-family: $font-1;
+	}
+	.content{
+		margin: 5% 12%;
+	}
+}
