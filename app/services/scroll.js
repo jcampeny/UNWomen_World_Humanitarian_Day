@@ -33,7 +33,7 @@ angular.module('app').service("scrollService",[ '$document','deviceDetector', fu
 		var pathX = lastX - currentX;
 
 		//Ajustar la sensibilidad (0 siempre up/down, 1 muy sensible a left/right)
-		var adjustment = 0.3;
+		var adjustment = 0.15;
 
 		if(Math.abs(pathY) > (Math.abs(pathX)*adjustment)){//vertical
 			direction = (pathY < 0) ?  "up" :   "down";

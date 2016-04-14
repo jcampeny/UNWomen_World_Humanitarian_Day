@@ -1,12 +1,17 @@
 var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', 'ngAnimate', 'ngResource', 'sn.skrollr', 'ng.deviceDetector'])
-.controller("mainController", [ '$scope', 'ArrayService', 'deviceDetector', '$document', 'scrollService', function($scope, ArrayService, deviceDetector, $document, scrollService) {
+.controller("mainController", [ '$scope', 'ArrayService', 'deviceDetector', '$document', 'scrollService','snSkrollr','$window', function($scope, ArrayService, deviceDetector, $document, scrollService, snSkrollr, $window) {
 
-$document.bind('mousewheel DOMMouseScroll touchmove scroll touchstart touchmove touchcancel touchend', function(e){
-	var direction = scrollService.getDirectionOnTouchMove(e);
-	if(direction == "right" || direction == "left"){
-		e.preventDefault();
-	}
-});
+	angular.element($window).on('resize' , function() {
+		snSkrollr.destroy();
+		skrollrInit(snSkrollr);
+	});
+
+	$document.bind('mousewheel DOMMouseScroll touchmove scroll touchstart touchmove touchcancel touchend', function(e){
+		var direction = scrollService.getDirectionOnTouchMove(e);
+		if(direction == "right" || direction == "left"){
+			e.preventDefault();
+		}
+	});
 
 }])
 .config(["snSkrollrProvider", function(snSkrollrProvider) {
@@ -45,12 +50,37 @@ $document.bind('mousewheel DOMMouseScroll touchmove scroll touchstart touchmove 
 
 }])
 .run(["snSkrollr", function(snSkrollr) {
-  snSkrollr.init({    
-  	constants: {
-
-    }});
+	skrollrInit(snSkrollr);
 }]);
-
+app.directive('burgerMenu', function(){
+	return {
+		restrict: 'E',
+		link: function (s, e, a){
+			s.clicked=true;
+			var animated = false;	
+			e.bind('touchstart click', function(){
+				if(!animated){
+					animated = true;
+					if(s.clicked){
+						TweenLite.set('#menu-mobile',{"z-index": 19});
+						TweenLite.to('#menu-mobile', 0.5, {opacity: 1});
+						TweenLite.to(e, 0.5, {color: "rgb(211,45,51)"});
+						TweenLite.to('.line1', 0.5, {rotation: 45, transformOrigin:"left 50%", left: "39%", top: "29%"});
+						TweenLite.to('.line2', 0.5, {rotationY: 90, top: "47%", left: "38%"});
+						TweenLite.to('.line3', 0.5, {rotation: -45,left: "33%", top: "47%", onComplete: function(){animated=false;}});					
+					}else{
+						TweenLite.set('#menu-mobile',{"z-index": -1});
+						TweenLite.to('#menu-mobile', 0.5, {opacity: 0});
+						TweenLite.to(e, 0.5, {color: "rgb(255,255,255)"});
+						TweenLite.to('.line1', 0.5, {rotation: 0, transformOrigin:"0", left: "35%", top: "36%"});
+						TweenLite.to('.line2', 0.5, {rotationY: 0, top: "48%", left: "35%"});
+						TweenLite.to('.line3', 0.5, {rotation: 0,left: "35%", top: "60%", onComplete: function(){animated=false;}});	
+					}
+					}	
+			});
+		}
+	};
+});
 app.directive('slide',function(scrollService, $document) {
 	return {
 		restrict : 'AE',
@@ -64,7 +94,7 @@ app.directive('slide',function(scrollService, $document) {
 				if(key===0){
 					left = "0%";
 				}
-				TweenLite.set(e, {height: $(sections[key]).height()});
+				TweenLite.set(e, {height: $(sections[key]).height()+50});
 			  	TweenLite.set(sections[key], {position: "absolute", width : "100%", left: left});
 
 			});
@@ -78,6 +108,7 @@ app.directive('slide',function(scrollService, $document) {
 				if(!slideMoving){
 					slideMoving = true;
 					var next;
+					var time = 0.5;
 					if(direction == "right"){
 						if(actual < total){
 							next = actual+1;	
@@ -85,8 +116,8 @@ app.directive('slide',function(scrollService, $document) {
 							next = 0;
 						}
 						TweenLite.set(sections[next], {left: "100%"});
-						TweenLite.to(sections[next], 0.5, {left: "0%"});
-						TweenLite.to(sections[actual], 0.5, {left: "-120%", onComplete: function() {slideMoving = false;}});
+						TweenLite.to(sections[next], time, {left: "0%"});
+						TweenLite.to(sections[actual], time, {left: "-120%", onComplete: function() {slideMoving = false;}});
 						actual = next;
 					}else if(direction == "left"){
 						if(actual > 0){
@@ -95,8 +126,8 @@ app.directive('slide',function(scrollService, $document) {
 							next = 2;
 						}
 						TweenLite.set(sections[next], {left: "-100%"});
-						TweenLite.to(sections[next], 0.5, {left: "0%"});
-						TweenLite.to(sections[actual], 0.5, {left: "120%", onComplete: function() {slideMoving = false;}});
+						TweenLite.to(sections[next], time, {left: "0%"});
+						TweenLite.to(sections[actual], time, {left: "120%", onComplete: function() {slideMoving = false;}});
 						actual = next;
 					}else{
 						slideMoving = false;
@@ -106,7 +137,7 @@ app.directive('slide',function(scrollService, $document) {
 		}
 	};
 });
-app.directive('screenDetector', ['$document','$timeout', 'animateService', function($document, $timeout, animateService){
+app.directive('screenDetector', ['$window', '$document','$timeout', 'animateService','svgService', function($window, $document, $timeout, animateService, svgService){
 	return {
 		restrict : 'AC',
 		scope: {
@@ -140,9 +171,15 @@ app.directive('screenDetector', ['$document','$timeout', 'animateService', funct
 					},500);
 				}				
 			}
-
 		});
 
+		if(type == "svg"){
+			svgService.setSizeToSvg(e);
+
+			angular.element($window).on('resize' , function() {
+                svgService.setSizeToSvg(e);
+            });
+		}
 		function inScreen(){
 			var $window = $(window);
 		    var w_bottom = $window.scrollTop() + $window.height(); //distancia al top + altura del viewport = posición del bottom del content
@@ -160,3 +197,17 @@ app.directive('screenDetector', ['$document','$timeout', 'animateService', funct
 	};
 }]);
 
+function skrollrInit(snSkrollr){
+	snSkrollr.init({    
+  	constants: {
+  		section1: function(){
+  			console.log($("#section1"));
+  			var h = $("#section1").offset().top;
+  			return h;
+  		},
+  		section11 : function(){
+  			var h = $("#section1").height() + $("#section2").height() + $("#section3").height() + $("#section4").height() + $("#section5").height()+ $("#section6").height()+$("#section7").height()+$("#section8").height()+$("#section9").height()+$("#section10").height(); // para que phantom no pete...
+  			return h+310;
+  		}
+    }});
+}

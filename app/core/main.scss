@@ -1,21 +1,74 @@
 @import 'vars';
 @import 'mixins';
 @import '../components/section/section';
-
+$font-2: 'Open Sans', sans-serif;
+$font-1: 'Libre Baskerville', serif;
 body {
+	font-family: $font-2;
 	margin:0;
 	padding:0;
-	@include opacity(1); 
+	color: white;
+	@include opacity(1);
+	font-size: 1.333em; 
 }
-$font-1: 'Times New Roman';
+.loading-page{
+	color: black;
+}
 #fixed-elements{
 	#menu-burger{
 		position: fixed;
 		position: absolute;
 		left: 0;
-		top: 0;
-		width: 30px;
-		height: 30px;
+		top: 12px;
+		width: 50px;
+		height: 50px;
+		z-index: 20;
+		color: rgb(255,255,255);
+		.line1,.line2,.line3,.text-burger{
+			position: absolute;
+			width: 25px;
+			left: 35%;
+		}
+		.line1{
+			top: 36%;
+			border-top: 1px solid;
+		}
+		.line2{
+			top: 48%;
+			border-top: 1px solid;
+			width: 20px;
+		}
+		.line3{
+			top: 60%;
+			border-top: 1px solid;
+		}
+		.text-burger{
+			font-size: 9px;
+			top: 70%;
+		}
+	}
+	#menu-mobile{
+		opacity: 0;
+		position: fixed;
+	    top: 0%;
+	    left: 0%;
+	    width: 100%;
+	    height: 100%;
+	    background: white;
+	    color: rgb(211,45,51);
+	    z-index: -1;
+	    .options{
+	    	position: absolute;
+	    	width:100%;
+	    	font-family: $font-1;
+	    	font-size: 20px;
+	    	text-align: center;
+	  		top: 50%;
+	  		@include transform(translateY(-50%));
+	  		div{
+	  			margin: 8%;
+	  		}
+	    }
 	}
 	#donate{
 		position: fixed;
@@ -25,6 +78,102 @@ $font-1: 'Times New Roman';
 		width: 30px;
 		height: 30px;
 	}
+	.section11{
+		min-height: 100vh;
+		width:100%;
+		position: absolute;
+		.img{
+			height: 100vh;width: 100%;
+			background-image: url("../assets/img/img-1.jpg");
+			background-size: cover;
+		}
+		h3{
+			font-family: $font-1;
+			font-weight: bold;
+			font-size: 20px;
+			margin: auto 11%;
+		}
+		.content{
+			font-family: $font-1;
+			font-size: 18px;
+			margin: 20px 11%;
+		}
+		.text-move{
+			position: absolute;
+		}
+	}
+	.section12{
+		min-height: 100vh;
+		width:100%;
+		position: absolute;
+		.img{
+			height: 100vh;width: 100%;
+			background-image: url("../assets/img/img-2.jpg");
+			background-size: cover;
+		}
+		h3{
+			font-family: $font-1;
+			font-weight: bold;
+			font-size: 20px;
+			margin: auto 11%;
+		}
+		.content{
+			font-family: $font-1;
+			font-size: 18px;
+			margin: 20px 11%;
+		}
+		.text-move{
+			position: absolute;
+		}
+	}
+	.section13{
+		min-height: 100vh;
+		width:100%;
+		position: absolute;
+		.img{
+			height: 100vh;width: 100%;
+			background-image: url("../assets/img/img-3.jpg");
+			background-size: cover;
+		}
+		h3{
+			font-family: $font-1;
+			font-weight: bold;
+			font-size: 20px;
+			margin: auto 11%;
+		}
+		.content{
+			font-family: $font-1;
+			font-size: 18px;
+			margin: 20px 11%;
+		}
+		.text-move{
+			position: absolute;
+		}
+	}
+	.section14{
+		min-height: 100vh;
+		width:100%;
+		position: absolute;
+		.img{
+			height: 100vh;width: 100%;
+			background-image: url("../assets/img/img-4.jpg");
+			background-size: cover;
+		}
+		h3{
+			font-family: $font-1;
+			font-weight: bold;
+			font-size: 20px;
+			margin: auto 11%;
+		}
+		.content{
+			font-family: $font-1;
+			font-size: 18px;
+			margin: 20px 11%;
+		}
+		.text-move{
+			position: absolute;
+		}
+	}
 }
 #section1{
 	min-height: 100vh;
@@ -33,11 +182,13 @@ $font-1: 'Times New Roman';
 	.title{
 		font-family: $font-1;
 		margin: auto;
-		width: 60%;
+		width: 80%;
 		text-align: center;
 		position: absolute;
 		top: 50%;
 		left: 50%;
+		font-size:32px;
+		line-height: 44px;
 		@include transform(translate(-50%, -50%));
 	}
 }
@@ -45,10 +196,149 @@ $font-1: 'Times New Roman';
 	width:100%;
 	position: relative;
 	.title{
-		margin: 5% 12%;
+		font-size:22px;
+		margin: 5% 11%;
 		font-family: $font-1;
+		font-weight: bold;
+		position: relative;
 	}
 	.content{
-		margin: 5% 12%;
+		font-size:16px;
+		margin: 5% 11%;
+		position: relative;
 	}
+}
+#section3{
+
+}
+
+#section4{
+	text-align: center;
+	h4{
+		font-family: $font-2;
+		font-weight: bold;
+		font-size: 12px;
+		margin: 50px;
+	}
+	.number{
+		font-family: $font-1;
+		font-weight: bold;
+		font-size: 44px;
+		margin-top:25px;
+	}
+	.number-stat{
+		font-family: $font-2;
+		font-size: 12px;
+	}
+	.number-content{
+		font-family: $font-2;
+		font-size: 14px;
+		color: #470D00;
+		width: 73%;
+    	margin: 10px auto;
+	}
+}
+
+#section5{
+	margin-top:100px;
+	@extend #section2;
+}
+#section6{
+
+}
+#section7{
+	h4{
+		font-family: $font-2;
+		font-weight: bold;
+		font-size: 12px;
+		margin: 50px;
+		text-align: center;
+	}
+	h3{
+		font-size:22px;
+		margin: 5% 11%;
+		font-family: $font-1;
+		font-style: italic;
+	}
+	.content{
+		font-size:16px;
+		margin: 5% 11%;
+	}
+	.stat-section{
+		color: #470D00;
+		border-top: 1px solid #470D00;
+		border-bottom: 1px solid #470D00;
+		margin: 50px 11%;
+		padding: 5px 0px 15px 0px;
+		.stat{
+			font-family: $font-1;
+			font-weight: bold;
+			font-size:22px;
+			span{
+				font-size:44px;
+			}
+		}
+		.stat-content{
+			font-family: $font-2;
+			font-size: 12px;
+			span{
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+#section8{
+	margin-top:100px;
+	@extend #section2;
+}
+
+#section10{
+	h4{
+		font-family: $font-2;
+		font-weight: bold;
+		font-size: 12px;
+		margin: 50px 11%;
+		text-align: center;
+	}
+}
+
+#section12{
+	position: absolute;
+	width: 100%;
+	@extend #section2;
+}
+#section13{
+	position: absolute;
+	width: 100%;
+	@extend #section2;
+	section{
+		h3.title{
+			font-size:22px;
+			margin: 5% 11%;
+			font-family: $font-1;
+			font-style: italic;
+			font-weight: normal;
+		}
+	}
+}
+#section14{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	@extend #section2;
+	.title{
+		font-size: 32px;
+		font-weight: normal;
+		text-align: center;
+		margin: 19% 11%;
+	}
+	.content{
+		text-align: center;
+		margin: 5% 24%;
+		span{
+			font-weight: bold;
+		}
+	}
+
 }
