@@ -197,19 +197,21 @@ body {
 	position: relative;
 	.title{
 		font-size:22px;
-		margin: 5% 11%;
+		margin: 5% 12%;
 		font-family: $font-1;
 		font-weight: bold;
 		position: relative;
+		line-height: 28px;
 	}
 	.content{
 		font-size:16px;
-		margin: 5% 11%;
+		margin: 5% 12%;
 		position: relative;
 	}
 }
 #section3{
-
+	width: 100%;
+	height: 50vh;
 }
 
 #section4{
@@ -219,6 +221,12 @@ body {
 		font-weight: bold;
 		font-size: 12px;
 		margin: 50px;
+		position: relative;
+	}
+	.number,
+	.number-stat,
+	.number-content{
+		position: relative;
 	}
 	.number{
 		font-family: $font-1;
@@ -244,32 +252,48 @@ body {
 	@extend #section2;
 }
 #section6{
-
+	@extend #section3;
 }
 #section7{
+	.svg-section{
+		margin-bottom: 60px;
+	}
+	h3,h4,.content,.stat,.stat-content{position: relative;}
 	h4{
 		font-family: $font-2;
 		font-weight: bold;
 		font-size: 12px;
-		margin: 50px;
+		margin: 20px 70px 0px 70px;
 		text-align: center;
+	}
+	.arrow{
+		margin: 20px auto 50px auto;
 	}
 	h3{
 		font-size:22px;
-		margin: 5% 11%;
+		margin: 5% 12%;
 		font-family: $font-1;
 		font-style: italic;
 	}
 	.content{
 		font-size:16px;
-		margin: 5% 11%;
+		margin: 5% 12%;
 	}
 	.stat-section{
 		color: #470D00;
-		border-top: 1px solid #470D00;
-		border-bottom: 1px solid #470D00;
-		margin: 50px 11%;
+		/*border-top: 1px solid #470D00;
+		border-bottom: 1px solid #470D00;*/
+		margin: 50px 12%;
 		padding: 5px 0px 15px 0px;
+		position: relative;
+		hr{
+			position: absolute;
+			width: 100%;
+			border-top: 1px solid #470D00;
+			margin: 0;
+		}
+		hr.top{top:0;}
+		hr.bottom{bottom:0; right: 0;}
 		.stat{
 			font-family: $font-1;
 			font-weight: bold;
@@ -292,14 +316,17 @@ body {
 	margin-top:100px;
 	@extend #section2;
 }
-
+#section9{
+	@extend #section3;
+}
 #section10{
 	h4{
 		font-family: $font-2;
 		font-weight: bold;
 		font-size: 12px;
-		margin: 50px 11%;
+		margin: 0px 12%;
 		text-align: center;
+		position: relative;
 	}
 }
 
@@ -315,7 +342,7 @@ body {
 	section{
 		h3.title{
 			font-size:22px;
-			margin: 5% 11%;
+			margin: 5% 12%;
 			font-family: $font-1;
 			font-style: italic;
 			font-weight: normal;
@@ -331,13 +358,173 @@ body {
 		font-size: 32px;
 		font-weight: normal;
 		text-align: center;
-		margin: 19% 11%;
+		margin: 19% 12%;
 	}
 	.content{
 		text-align: center;
 		margin: 5% 24%;
 		span{
 			font-weight: bold;
+		}
+	}
+
+}
+
+
+/*ANIMATIONS*/
+@include keyframes(cloud) {
+  25% { @include transform(translateX(40px)); }
+  75% { @include transform(translateX(-40px)); }
+}
+.cloud-1 {
+  @include animation('cloud 15s infinite');
+
+}
+.cloud-2 {
+  @include animation('cloud 20s infinite');
+}
+.cloud-3 {
+  @include animation('cloud 25s infinite');
+}
+
+@include keyframes(hearth) {
+  0% { stroke-dashoffset: 140;}
+  80% { stroke-dashoffset: 0;}
+  100% { stroke-dashoffset: 0;}
+}
+.hearth{
+	stroke-dasharray: 140;
+	@include animation('hearth 2s infinite');
+}
+
+@include keyframes(hearth-point) {
+  0% { opacity: 0;}
+  80% {opacity: 0;}
+  85% {opacity: 1;}
+  90% {opacity: 0;}
+  95% {opacity: 1;}
+  100% { opacity: 1;}
+}
+.hearth-point{
+	@include animation('hearth-point 2s infinite');
+}
+
+@include keyframes(text-1) {
+  0% { stroke-dashoffset: 80;}
+  20% { stroke-dashoffset: 0;}
+  100% { stroke-dashoffset: 0;}
+}
+@include keyframes(text-2) {
+  0% { stroke-dashoffset: 80;}
+  20% { stroke-dashoffset: 80;}
+  40% { stroke-dashoffset: 0;}
+  100% { stroke-dashoffset: 0;}
+}
+@include keyframes(text-3) {
+  0% { stroke-dashoffset: 80;}
+  40% { stroke-dashoffset: 80;}
+  60% { stroke-dashoffset: 0;}
+  100% { stroke-dashoffset: 0;}
+}
+@include keyframes(text-4) {
+  0% { stroke-dashoffset: 40;}
+  60% { stroke-dashoffset: 40;}
+  80% { stroke-dashoffset: 0;}
+  100% { stroke-dashoffset: 0;}
+}
+.text-1,.text-2,.text-3{
+	stroke-dasharray: 80;
+}
+.text-4{
+	stroke-dasharray: 40;
+}
+.text-1{
+	@include animation('text-1 3s infinite');
+}
+.text-2{
+	@include animation('text-2 3s infinite');
+}
+.text-3{
+	@include animation('text-3 3s infinite');
+}
+.text-4{
+	@include animation('text-4 3s infinite');
+}
+@include keyframes(water) {
+  0% { @include transform(scaleY(0.4) translateY(140px)); opacity:1;}
+  30% {opacity: 1;}
+  50% {opacity: 0;}
+  100% { @include transform(scaleY(1) translateY(45px));opacity: 0; }
+}
+.water{
+	@include animation('water 1.4s infinite');
+}
+
+@include keyframes(arrow1) {
+  0% { @include transform(translateY(0px));}
+  50% { @include transform(translateY(40px)); }
+  100% { @include transform(translateY(40px)); }
+}
+@include keyframes(arrow2) {
+  0% { @include transform(translateY(-40px));}
+  50% { @include transform(translateY(0px)); }
+  100% { @include transform(translateY(0px)); }
+}
+.arrow-1{
+	@include transform(translateY(0px));
+	@include animation('arrow1 2s infinite ease-in-out');
+}
+.arrow-2{
+	@include transform(translateY(-40px));
+	@include animation('arrow2 2s infinite ease-in-out');
+}
+
+	//stat1
+
+#section7{
+	.stat-1{
+		.circle-1,.circle-2,.circle-3{
+			stroke-dashoffset: 390;
+		    stroke-dasharray: 390;
+		    @include transform-origin(50% 50%);
+		    @include transform(rotate(-90deg));				
+		}
+		@include keyframes(boom) {
+		  0% { @include transform(matrix(0.20,0.00,0.00,0.20,150,10)); opacity:0;}
+		  5% { opacity:1;}
+		  20% { @include transform(matrix(1.00,0.00,0.00,1.00,0,0)); opacity:1;}
+		  100% { @include transform(matrix(1.00,0.00,0.00,1.00,0,0)); opacity:1;}
+		}
+		.boom{
+			@include animation('boom 2s infinite ease-in-out');
+		}
+		@include keyframes(arrows) {
+		  0% { @include transform(translateX(40px)); opacity:0;}
+		  20% { opacity:1;}
+		  80% { opacity:1;}
+		  100% { @include transform(translateX(90px)); opacity:0;}
+		}
+		.arrows{
+			@include animation('arrows 1s infinite ease-in-out');
+		}
+		@include keyframes(wave) {
+		  0% { @include transform(translateX(-30px)); opacity:0;}
+		  20% { opacity:1;}
+		  60% { opacity:1;}
+		  70% { @include transform(translateX(35px)); opacity:0;}
+		  100% { @include transform(translateX(40px)); opacity:0;}
+		}
+		.wave{
+			@include animation('wave 3s infinite ease-in-out');
+		}
+		@include keyframes(house) {
+		  0% {opacity:1;}
+		  50% { opacity:1;}
+		  53% { opacity:0;}
+		  100% { opacity:0;}
+		}
+		.house{
+			@include animation('house 3s infinite ease-in-out');
 		}
 	}
 

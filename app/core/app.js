@@ -137,6 +137,24 @@ app.directive('slide',function(scrollService, $document) {
 		}
 	};
 });
+app.directive('svgContainer',['$window','svgService', function($window, svgService){
+	return {
+		restrict : 'AC',
+		link : function (s, e, a){
+
+			svgService.setSizeToSvg(e);
+
+			angular.element($window).on('resize' , function() {
+	            svgService.setSizeToSvg(e);
+	        });
+		},
+	    templateUrl: function (e, a){
+	      var templateName = "../assets/img/"+a.name+".svg";
+	     
+	      return templateName;
+	    }
+	};
+}]);
 app.directive('screenDetector', ['$window', '$document','$timeout', 'animateService','svgService', function($window, $document, $timeout, animateService, svgService){
 	return {
 		restrict : 'AC',
@@ -173,13 +191,6 @@ app.directive('screenDetector', ['$window', '$document','$timeout', 'animateServ
 			}
 		});
 
-		if(type == "svg"){
-			svgService.setSizeToSvg(e);
-
-			angular.element($window).on('resize' , function() {
-                svgService.setSizeToSvg(e);
-            });
-		}
 		function inScreen(){
 			var $window = $(window);
 		    var w_bottom = $window.scrollTop() + $window.height(); //distancia al top + altura del viewport = posición del bottom del content
