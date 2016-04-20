@@ -1,0 +1,143 @@
+$font-2: 'Open Sans', sans-serif;
+$font-1: 'Libre Baskerville', serif;
+#fixed-elements{
+	a.lang{
+		position: fixed;
+		border: 1px solid white;
+		color: white;
+		@include transform(translate(-50%, -50%));
+	}
+	header{
+		position: fixed;
+		height: 100%;
+		width: 15%;
+		top:0; 
+		left:0;
+		ul{
+			list-style: none;
+			position: absolute;
+			bottom: 50%;
+			li{
+				margin: 20px auto;
+				font-weight: bold;
+				color: rgba(255,255,255,0.5);
+			}
+			li.active{
+				color: rgb(255,255,255);
+			}
+		}
+	}
+	#svg1{
+		position:fixed;
+		width:100%;
+		height: 100%;
+		svg{
+		    position: absolute;
+		    bottom: 0;
+		}
+	}
+	#svg2{
+		@extend #svg1;
+	}
+
+}
+#the-content{
+	margin: 0 15%;
+	width:70%;
+	#section1{
+		width: 100%;
+		min-height: 100vh;
+		position: relative;
+		h2.title{
+			font-family: $font-1;
+			margin: auto;
+			width: 80%;
+			text-align: center;
+			position: absolute;
+			top: 40%;
+			left: 50%;
+			font-size: 50px;
+			line-height: 75px;
+			@include transform(translate(-50%, -50%));
+		}
+
+		@include keyframes(ani-mouse ) {
+			0% {opacity: 1;top: 20%; }
+			15% {opacity: 1;top: 40%; }
+			50% {opacity: 0;top: 40%; }
+			100% {opacity: 0;top: 20%; }
+		}
+
+		.scroll-btn{
+			position: absolute;
+			left: 50%;
+			bottom: 10%;
+			@include transform(translateX(-50%));
+		}
+		.text{
+			position: absolute;
+		    width: 100%;
+		    top: -60%;
+		    left: -120%;
+		    white-space: nowrap;
+		}
+		.scroll-btn .mouse {
+			position: relative;
+			display: block;
+			width: 35px;
+			height: 55px;
+			border: 2px solid white;
+			border-radius: 23px;
+		}
+		.scroll-btn .mouse > * {
+			position: absolute;
+			left: 52%;
+			width: 6px;
+			height: 6px;
+			margin: -4px 0 0 -4px;
+			background: white;
+			border-radius: 50%;
+			@include animation('ani-mouse 2s infinite ease-in-out');
+		}
+	}
+	#section2{
+		.content{
+			width: 50%;
+			min-height: 100vh;
+			margin-top: 150px;
+			h3.title{
+				font-family: $font-1;
+				font-size: 40px;	
+			}
+			div.text{
+				font-size: 20px;
+			}
+
+		}
+	}
+	#section3{
+		.content{
+			width: 100%;
+			min-height: 100vh;
+			margin-top: 150px;
+			text-align: center;
+			.number{
+				font-family: $font-1;
+				font-size: 60px;
+				font-weight: bold;
+			}
+			.number-stat{
+				font-size: 16px;
+			}
+			.number-content{
+				font-size: 16px;
+				color: #922F22;
+				width: 35%;
+				margin: 0 auto;
+			}
+		}
+	}
+	#section4{
+		@extend #section2;
+	}
+}

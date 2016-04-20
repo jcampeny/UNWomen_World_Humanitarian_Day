@@ -3,14 +3,23 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 
 	angular.element($window).on('resize' , function() {
 		snSkrollr.destroy();
-		skrollrInit(snSkrollr);
+		skrollrInit(snSkrollr, deviceDetector);
 	});
 
-	$document.bind('mousewheel DOMMouseScroll touchmove scroll touchstart touchmove touchcancel touchend', function(e){
+	$document.bind('touchmove touchstart touchmove touchcancel touchend', function(e){
 		var direction = scrollService.getDirectionOnTouchMove(e);
+		var openMenu = $('#menu-mobile').css('opacity');
 		if(direction == "right" || direction == "left"){
 			e.preventDefault();
 		}
+		if(openMenu == "0"){
+			if(direction == "down"){
+				TweenLite.to('#menu-burger', 0.5, {top: '-60px'});
+			}else if(direction == "up"){
+				TweenLite.to('#menu-burger', 0.5, {top: '12px'});
+			}
+		}
+
 	});
 
 }])
@@ -49,32 +58,57 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 	});
 
 }])
-.run(["snSkrollr", function(snSkrollr) {
-	skrollrInit(snSkrollr);
+.run(["snSkrollr",'deviceDetector', function(snSkrollr,deviceDetector) {
+	setTimeout(function() {
+		skrollrInit(snSkrollr, deviceDetector);
+	}, 500);
+	
 }]);
-app.directive('burgerMenu', function(){
+app.directive('burgerMenu', function($document){
 	return {
 		restrict: 'E',
 		link: function (s, e, a){
 			s.clicked=true;
+			var open = false;
 			var animated = false;	
+
 			e.bind('touchstart click', function(){
 				if(!animated){
 					animated = true;
 					if(s.clicked){
+						TweenMax.to("#mov1", 0.5, {attr:{d:"M35,35 C39,39 41,41 45,45", stroke : '#d32d33'}});
+						TweenMax.to("#mov2", 0.5, {attr:{d:"M45,45 C49,41 51,39 55,35", stroke : '#d32d33'}});
+
+						TweenMax.to("#mov3", 0.5, {attr:{x1:"45", stroke : '#d32d33', 'stroke-opacity' : "1"}});
+						TweenMax.to("#mov4", 0.5, {attr:{x2:"45", stroke : '#d32d33', 'stroke-opacity' : "1"}});
+
+						TweenMax.to("#mov5", 0.5, {attr:{d:"M35,55 C39,51 41,49 45,45", stroke : '#d32d33'}});
+						TweenMax.to("#mov6", 0.5, {attr:{d:"M45,45 C49,49 51,51 55,55", stroke : '#d32d33'}, onComplete: function(){animated=false;}});
+						open = true;
 						TweenLite.set('#menu-mobile',{"z-index": 19});
 						TweenLite.to('#menu-mobile', 0.5, {opacity: 1});
 						TweenLite.to(e, 0.5, {color: "rgb(211,45,51)"});
-						TweenLite.to('.line1', 0.5, {rotation: 45, transformOrigin:"left 50%", left: "39%", top: "29%"});
+
+						/*TweenLite.to('.line1', 0.5, {rotation: 45, transformOrigin:"left 50%", left: "39%", top: "29%"});
 						TweenLite.to('.line2', 0.5, {rotationY: 90, top: "47%", left: "38%"});
-						TweenLite.to('.line3', 0.5, {rotation: -45,left: "33%", top: "47%", onComplete: function(){animated=false;}});					
+						TweenLite.to('.line3', 0.5, {rotation: -45,left: "33%", top: "47%", onComplete: function(){animated=false;}});	*/				
 					}else{
+						open = false;
+						TweenMax.to("#mov1", 0.5, {attr:{d:"M35,38 C39,38 41,38 45,38", stroke : '#FFFFFF'}});
+						TweenMax.to("#mov2", 0.5, {attr:{d:"M45,38 C49,38 51,38 55,38", stroke : '#FFFFFF'}});
+
+						TweenMax.to("#mov3", 0.5, {attr:{x1:"35", stroke : '#FFFFFF', 'stroke-opacity' : "1"}});
+						TweenMax.to("#mov4", 0.5, {attr:{x2:"55", stroke : '#FFFFFF', 'stroke-opacity' : "1"}});
+
+						TweenMax.to("#mov5", 0.5, {attr:{d:"M35,52 C39,52 41,52 45,52", stroke : '#FFFFFF'}});
+						TweenMax.to("#mov6", 0.5, {attr:{d:"M45,52 C49,52 51,52 55,52", stroke : '#FFFFFF'}, onComplete: function(){animated=false;}});
+
 						TweenLite.set('#menu-mobile',{"z-index": -1});
 						TweenLite.to('#menu-mobile', 0.5, {opacity: 0});
 						TweenLite.to(e, 0.5, {color: "rgb(255,255,255)"});
-						TweenLite.to('.line1', 0.5, {rotation: 0, transformOrigin:"0", left: "35%", top: "36%"});
+						/*TweenLite.to('.line1', 0.5, {rotation: 0, transformOrigin:"0", left: "35%", top: "36%"});
 						TweenLite.to('.line2', 0.5, {rotationY: 0, top: "48%", left: "35%"});
-						TweenLite.to('.line3', 0.5, {rotation: 0,left: "35%", top: "60%", onComplete: function(){animated=false;}});	
+						TweenLite.to('.line3', 0.5, {rotation: 0,left: "35%", top: "60%", onComplete: function(){animated=false;}});*/	
 					}
 					}	
 			});
@@ -90,20 +124,26 @@ app.directive('slide',function(scrollService, $document) {
 			var total = sections.length-1;
 			var slideMoving = false;
 			angular.forEach(sections, function(value, key) {
-				var left = "100%";
+				var opacity = "0";
 				if(key===0){
-					left = "0%";
+					opacity = "1";
 				}
 				TweenLite.set(e, {height: $(sections[key]).height()+50});
-			  	TweenLite.set(sections[key], {position: "absolute", width : "100%", left: left});
+			  //	TweenLite.set(sections[key], {position: "absolute", width : "100%", left: left});
+			  TweenLite.set(sections[key], {position: "absolute", width : "100%", opacity: opacity});
 
 			});
 
-			e.bind('touchmove',function(e) {
-				var direction = scrollService.getDirectionOnTouchMove(e);
-				moveSlide(direction);
+		/*	e.bind('touchmove',function(e) {
+				//var direction = scrollService.getDirectionOnTouchMove(e);
+				//moveSlide(direction);
+			});*/
+			$('.arrow-right').bind('click', function(){
+				moveSlide('right');
 			});
-
+			$('.arrow-left').bind('click', function(){
+				moveSlide('left');
+			});
 			function moveSlide(direction){
 				if(!slideMoving){
 					slideMoving = true;
@@ -115,9 +155,11 @@ app.directive('slide',function(scrollService, $document) {
 						}else{
 							next = 0;
 						}
-						TweenLite.set(sections[next], {left: "100%"});
-						TweenLite.to(sections[next], time, {left: "0%"});
-						TweenLite.to(sections[actual], time, {left: "-120%", onComplete: function() {slideMoving = false;}});
+						//TweenLite.set(sections[next], {left: "100%"});
+						//TweenLite.to(sections[next], time, {left: "0%"});
+						//TweenLite.to(sections[actual], time, {left: "-120%", onComplete: function() {slideMoving = false;}});
+						TweenLite.to(sections[next], time,{opacity: "1", delay: time});
+						TweenLite.to(sections[actual], time,{opacity: "0", onComplete: function() {slideMoving = false;}});
 						actual = next;
 					}else if(direction == "left"){
 						if(actual > 0){
@@ -125,9 +167,11 @@ app.directive('slide',function(scrollService, $document) {
 						}else{
 							next = 2;
 						}
-						TweenLite.set(sections[next], {left: "-100%"});
-						TweenLite.to(sections[next], time, {left: "0%"});
-						TweenLite.to(sections[actual], time, {left: "120%", onComplete: function() {slideMoving = false;}});
+						//TweenLite.set(sections[next], {left: "-100%"});
+						//TweenLite.to(sections[next], time, {left: "0%"});
+						//TweenLite.to(sections[actual], time, {left: "120%", onComplete: function() {slideMoving = false;}});
+						TweenLite.to(sections[next], time,{opacity: "1", delay: time});
+						TweenLite.to(sections[actual], time,{opacity: "0", onComplete: function() {slideMoving = false;}});
 						actual = next;
 					}else{
 						slideMoving = false;
@@ -140,17 +184,28 @@ app.directive('slide',function(scrollService, $document) {
 app.directive('svgContainer',['$window','svgService', function($window, svgService){
 	return {
 		restrict : 'AC',
+		scope : {
+			proportional : "@"
+		},
 		link : function (s, e, a){
 
-			svgService.setSizeToSvg(e);
+			if(!s.proportional){
+            	svgService.setSizeToSvg(e);					
+			}else{
+				svgService.setSizeToSvgProportional(e, s.proportional);	
+			}
 
 			angular.element($window).on('resize' , function() {
-	            svgService.setSizeToSvg(e);
+				if(!s.proportional){
+	            	svgService.setSizeToSvg(e);					
+				}else{
+					svgService.setSizeToSvgProportional(e, s.proportional);	
+				}
+
 	        });
 		},
 	    templateUrl: function (e, a){
-	      var templateName = "../assets/img/"+a.name+".svg";
-	     
+	      var templateName = "../assets/img/"+a.name+".svg";   
 	      return templateName;
 	    }
 	};
@@ -208,17 +263,43 @@ app.directive('screenDetector', ['$window', '$document','$timeout', 'animateServ
 	};
 }]);
 
-function skrollrInit(snSkrollr){
-	snSkrollr.init({    
-  	constants: {
-  		section1: function(){
-  			console.log($("#section1"));
-  			var h = $("#section1").offset().top;
-  			return h;
-  		},
-  		section11 : function(){
-  			var h = $("#section1").height() + $("#section2").height() + $("#section3").height() + $("#section4").height() + $("#section5").height()+ $("#section6").height()+$("#section7").height()+$("#section8").height()+$("#section9").height()+$("#section10").height(); // para que phantom no pete...
-  			return h+310;
-  		}
-    }});
+function skrollrInit(snSkrollr, deviceDetector){
+	
+	if(deviceDetector.isMobile()){
+		snSkrollr.init({ //mobile   
+	  	constants: {
+	  		section1: function(){
+	  			console.log($("#section1"));
+	  			var h = $("#section1").offset().top;
+	  			return h;
+	  		},
+	  		section11 : function(){
+	  			var h = $("#section1").height() + $("#section2").height() + $("#section3").height() + $("#section4").height() + $("#section5").height()+ $("#section6").height()+$("#section7").height()+$("#section8").height()+$("#section9").height()+$("#section10").height(); // para que phantom no pete...
+	  			
+	  			/*console.log($("#section1").height());
+				console.log($("#section2").height());
+	  			console.log($("#section3").height());
+	  			console.log($("#section4").height());
+	  			console.log($("#section5").height());
+	  			console.log($("#section6").height());
+	  			console.log($("#section7").height());
+	  			console.log($("#section8").height());
+	  			console.log($("#section9").height());
+	  			console.log($("#section10").height());
+	  			console.log(h);*/
+	  			return h+310;
+	  		}
+	    }});
+
+	}else{
+		snSkrollr.init({
+			constants: {
+				section11: function(){
+					return 100;
+				}
+			}
+		});	
+	}
+
+
 }

@@ -4,6 +4,7 @@ angular.module('app')
 		manager : manager,
 		setSizeToSvg : setSizeToSvg,
 		staggerRect : staggerRect,
+		setSizeToSvgProportional : setSizeToSvgProportional
 	};
 
 	function manager(e, a, stats) {
@@ -121,6 +122,15 @@ angular.module('app')
 			var svg = e.find("svg");
 			var w = $(e).width();
 			var h = $(e).height();
+
+			$(svg[0]).attr({
+				width : w,
+				height : h});
+	}
+	function setSizeToSvgProportional(e, prop){
+			var svg = e.find("svg");
+			var w = $(e).width();
+			var h = w * prop;
 
 			$(svg[0]).attr({
 				width : w,
