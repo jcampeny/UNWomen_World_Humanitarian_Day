@@ -1,29 +1,32 @@
 <div class="mobile">
 	<div id="fixed-elements">
-		<burger-menu id="menu-burger" ng-click="clicked = !clicked" >
+		<burger-menu id="menu-burger" data-400-start="background: rgba(255,255,255,0);" data-700-start="background:rgba(255,255,255,1);" ng-click="clicked = !clicked" >
 			<!--<div class="line1"></div>
 			<div class="line2"></div>
 			<div class="line3"></div>-->
 			<svg width="89px" height="89px">
-				<path id="mov1" d="M35,38 C39,38 41,38 45,38" fill="none" stroke-width="1px" stroke="#fff"></path>
-				<path id="mov2" d="M45,38 C49,38 51,38 55,38" fill="none" stroke-width="1px" stroke="#fff"></path>
-				<line id="mov3" x1="35" y1="45" x2="45" y2="45" x="0" fill="none" stroke-width="1px" stroke="#fff" stroke-opacity="1"></line>
-				<line id="mov4" x1="45" y1="45" x2="55" y2="45" x="10" fill="none" stroke-width="1px" stroke="#fff" stroke-opacity="1"></line>
-				<path id="mov5" d="M35,52 C39,52 41,52 45,52" fill="none" stroke-width="1px" stroke="#fff"></path>
-				<path id="mov6" d="M45,52 C49,52 51,52 55,52" fill="none" stroke-width="1px" stroke="#fff"></path>
+				<path id="mov1" d="M35,38 C39,38 41,38 45,38" fill="none" stroke-width="1px"  data-400-start="stroke: rgb(255,255,255);" data-700-start="stroke:rgb(211,45,51);" data-_section11-start="stroke:rgb(230,154,105);" data-end="stroke:rgb(79,186,228);"></path>
+				<path id="mov2" d="M45,38 C49,38 51,38 55,38" fill="none" stroke-width="1px"  data-400-start="stroke: rgb(255,255,255);" data-700-start="stroke:rgb(211,45,51);" data-_section11-start="stroke:rgb(230,154,105);" data-end="stroke:rgb(79,186,228);"></path>
+				<line id="mov3" x1="35" y1="45" x2="45" y2="45" x="0" fill="none" stroke-width="1px"  data-400-start="stroke: rgb(255,255,255);" data-700-start="stroke:rgb(211,45,51);" data-_section11-start="stroke:rgb(230,154,105);" data-end="stroke:rgb(79,186,228);" stroke-opacity="1"></line>
+				<line id="mov4" x1="45" y1="45" x2="55" y2="45" x="10" fill="none" stroke-width="1px"  data-400-start="stroke: rgb(255,255,255);" data-700-start="stroke:rgb(211,45,51);" data-_section11-start="stroke:rgb(230,154,105);" data-end="stroke:rgb(79,186,228);" stroke-opacity="1"></line>
+				<path id="mov5" d="M35,52 C39,52 41,52 45,52" fill="none" stroke-width="1px"  data-400-start="stroke: rgb(255,255,255);" data-700-start="stroke:rgb(211,45,51);" data-_section11-start="stroke:rgb(230,154,105);" data-end="stroke:rgb(79,186,228);"></path>
+				<path id="mov6" d="M45,52 C49,52 51,52 55,52" fill="none" stroke-width="1px"  data-400-start="stroke: rgb(255,255,255);" data-700-start="stroke:rgb(211,45,51);" data-_section11-start="stroke:rgb(230,154,105);" data-end="stroke:rgb(79,186,228);"></path>
 			</svg>
-			<div class="text-burger"><span ng-show="clicked">Menu</span><span ng-show="!clicked">Close</span></div>
+			<div class="text-burger"><span data-400-start="color: rgb(255,255,255);" data-700-start="color:rgb(211,45,51);" data-_section11-start="color:rgb(230,154,105);" data-end="color:rgb(79,186,228);" ng-show="clicked">Menu</span><span data-400-start="color: rgb(255,255,255);" data-700-start="color:rgb(211,45,51);" data-_section11-start="color:rgb(230,154,105);" data-end="color:rgb(79,186,228);" ng-show="!clicked">Close</span></div>
 
 		</burger-menu>
 		<div id="menu-mobile">
 			<div class="options">
-				<div>Today’s Situation</div>
-				<div>Gender Impacts</div>
-				<div>Agents of Change</div>
-				<div>Commitments</div>
+				<div><a href="#data" data-menu-top="{{scrollToMobile.section1}}" data-start="color:rgb(211,45,51); text-decoration:underline;" data-_section11-start="color:rgb(230,154,105);" data-end="color:rgb(79,186,228);" data-1800="text-decoration:none;">Today’s Situation</a></div>
+				<div><a href="#data" data-menu-top="{{scrollToMobile.section2}}" data-start="color:rgb(211,45,51);" data-_section11-start="color:rgb(230,154,105);" data-end="color:rgb(79,186,228);"
+				data-1800="text-decoration:none;" data-1801="text-decoration:underline;" data-5599="text-decoration:underline;" data-5600="text-decoration:none;">Gender Impacts</a></div>
+				<div><a href="#data" data-menu-top="{{scrollToMobile.section3}}" data-start="color:rgb(211,45,51);" data-_section11-start="color:rgb(230,154,105);" data-end="color:rgb(79,186,228);"
+				data-5599="text-decoration:none;" data-5600="text-decoration:underline;" data-10099="text-decoration:underline;" data-10100="text-decoration:none;">Agents of Change</a></div>
+				<div><a href="#data" data-menu-top="{{scrollToMobile.section4}}" data-start="color:rgb(211,45,51);" data-_section11-start="color:rgb(230,154,105);" data-end="color:rgb(79,186,228);"
+				data-10099="text-decoration:none;" data-10100="text-decoration:underline;" data-end="text-decoration:underline;">Commitments</a></div>
 			</div>
 			<div class="lang-section">
-				<a class="en active">English</a>
+				<a class="en active" data-start="background:rgb(211,45,51);" data-_section11-start="background:rgb(230,154,105);" data-end="background:rgb(79,186,228);">English</a>
 				<a class="es">Español</a>
 				<a class="fr">Français</a>
 			</div>
@@ -43,7 +46,10 @@
 				data-_section11-0="bottom:-100%;" 
 				data-_section11-700="bottom:100%;">
 				<h3>Syria refugee crisis</h3>
-				<div class="content">UN Women’s largest cashfor-work programme for women in Jordan’s Za’atari refugee camp increased the average income of fulltime workers, improving diets, household hygiene and healthcare. </div>
+				<div class="content">UN Women’s largest cashfor-work programme for women in Jordan’s Za’atari refugee camp increased the average income of fulltime workers, improving diets, household hygiene and healthcare. 
+					<div class="credits">Credit: UN Women/Christopher Herwig</div>
+				</div>
+
 			</div>
 		</div>
 
@@ -61,7 +67,9 @@
 				data-_section11-1000="bottom:-100%;" 
 				data-_section11-1700="bottom:100%;">
 				<h3>Ebola epidemic, West Africa</h3>
-				<div class="content">As primary care providers, nurses and midwives, women were at increased risk to contracting Ebola when the outbreak hit in 2014. UN Women mobilized to educate and empower women to help curb the spread of Ebola in the region and in particular rural areas.  </div>
+				<div class="content">As primary care providers, nurses and midwives, women were at increased risk to contracting Ebola when the outbreak hit in 2014. UN Women mobilized to educate and empower women to help curb the spread of Ebola in the region and in particular rural areas. 
+					<div class="credits">Credit: UN Women/Christopher Herwig</div>
+				</div>
 			</div>
 		</div>
 
@@ -79,7 +87,9 @@
 				data-_section11-2000="bottom:-100%;" 
 				data-_section11-2700="bottom:100%;">
 				<h3>Earthquake, Nepal</h3>
-				<div class="content">When an earthquake rocked Nepal in 2015, UN Women partnered with national women’s groups and civil society to develop an early recovery strategy through a “Common Charter of Women’s Demands”. </div>
+				<div class="content">When an earthquake rocked Nepal in 2015, UN Women partnered with national women’s groups and civil society to develop an early recovery strategy through a “Common Charter of Women’s Demands”. 
+					<div class="credits">Credit: Samir Jung Thapa</div>
+				</div>
 			</div>
 		</div>
 	<!--transform: matrix3d(0.25,0,0.00,0,0.00,-0.8,0.00,0.004,0,0,1,0,0,0,0,1);
@@ -98,7 +108,9 @@
 				data-_section11-3000="bottom:-100%;" 
 				data-_section11-3700="bottom:100%;">
 				<h3>Cyclone, Fiji</h3>
-				<div class="content">Following the devastating cyclone in Fiji in 2016, UN Women has been working with local partners to promote economic opportunities for women through market spaces.  </div>
+				<div class="content">Following the devastating cyclone in Fiji in 2016, UN Women has been working with local partners to promote economic opportunities for women through market spaces.  
+					<div class="credits">Credit: Murray Lloyd Photography</div>
+				</div>
 			</div>
 		</div>
 
@@ -106,8 +118,8 @@
 			data-_section11-3750="top:100%;" 
 			data-_section11-4150="top:0%;"
 			data-_section11-4550="top:-100%;">
-			<h3 class="title" data-_section11-3800="right:20px; opacity:0;" data-_section11-3900="right:0px; opacity:1;">Catalyzing action to achieve gender equality</h3>
-			<div class="content" data-_section11-3900="right:20px; opacity:0;" data-_section11-4000="right:0px; opacity:1;">Together we must take bold steps to enable women and girls to realize their human rights and full potential and end discrimination in crises. When women are meaningfully engaged, and their needs are directly addressed, humanitarian action is more efficient and effective, the transition to recovery accelerated, and community wide resilience is enhanced.</div>
+			<h3 class="title" data-_section11-3800="top:80px; opacity:0;" data-_section11-3900="top:0px; opacity:1;">Catalyzing action to achieve gender equality</h3>
+			<div class="content" data-_section11-3900="top:80px; opacity:0;" data-_section11-4000="top:0px; opacity:1;">Together we must take bold steps to enable women and girls to realize their human rights and full potential and end discrimination in crises. When women are meaningfully engaged, and their needs are directly addressed, humanitarian action is more efficient and effective, the transition to recovery accelerated, and community wide resilience is enhanced.</div>
 		</div>
 
 		<div id="section-between-12-13" svg-container  name="svg4"

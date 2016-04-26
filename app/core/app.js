@@ -1,9 +1,33 @@
 var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', 'ngAnimate', 'ngResource', 'sn.skrollr', 'ng.deviceDetector'])
-.controller("mainController", [ '$scope', 'ArrayService', 'deviceDetector', '$document', 'scrollService','snSkrollr','$window', function($scope, ArrayService, deviceDetector, $document, scrollService, snSkrollr, $window) {
+.controller("mainController", [ '$scope', 'ArrayService', 'deviceDetector', '$document', 'scrollService','snSkrollr','$window','$timeout', function($scope, ArrayService, deviceDetector, $document, scrollService, snSkrollr, $window, $timeout) {
 
 	angular.element($window).on('resize' , function() {
 		snSkrollr.destroy();
 		skrollrInit(snSkrollr, deviceDetector);
+		setScroll();
+
+	});
+
+	
+	angular.element($document).ready(function () {
+		setScroll();
+    });
+
+	var scrolling = false;
+
+	$document.bind('mousewheel DOMMouseScroll touchmove scroll', function(e){				
+		//console.log($(document).scrollTop());
+		var actual = $(document).scrollTop();
+		//var time = 0.5;
+		//
+		//var direction = scrollService.getDirectionOnMouseWheel(e);console.log(direction);
+		//if(!scrolling && direction == "down"){
+		//	scrolling = true;
+		//	e.preventDefault();
+		//	
+		//TweenLite.to(window, 0.3, {scrollTo:{y:actual+100}, ease: Power1.easeOut, onComplete: function(){$timeout(function(){e.preventDefault();},100)}});
+//
+		//}
 	});
 
 	$document.bind('touchmove touchstart touchmove touchcancel touchend', function(e){
@@ -16,11 +40,25 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 			if(direction == "down"){
 				TweenLite.to('#menu-burger', 0.5, {top: '-60px'});
 			}else if(direction == "up"){
-				TweenLite.to('#menu-burger', 0.5, {top: '12px'});
+				TweenLite.to('#menu-burger', 0.5, {top: '0px'});
 			}
 		}
 
 	});
+	function setScroll(){
+	    $scope.scrollToMobile = {
+			section1 : $('#section1').height()/2,
+			section2 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height())/2,
+			section3 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height()+ $('#section7').height())/2,
+			section4 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height()+ $('#section7').height()+ $('#section8').height() + $('#section9').height()+ $('#section10').height()+ 4300)/2,
+		};
+	    $scope.scrollToDesktop = {
+			section1 : $('#section1').height()/2,
+			section2 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ 350)/2,
+			section3 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height() + 350)/2,
+			section4 : (($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height() + 350)/2)+ 6900,
+		};
+	}
 
 }])
 .config(["snSkrollrProvider", function(snSkrollrProvider) {
@@ -75,33 +113,42 @@ app.directive('burgerMenu', function($document){
 			e.bind('touchstart click', function(){
 				if(!animated){
 					animated = true;
+					var h = $('#section1').offset();
+					var color = $('body').css('background-color');
 					if(s.clicked){
-						TweenMax.to("#mov1", 0.5, {attr:{d:"M35,35 C39,39 41,41 45,45", stroke : '#d32d33'}});
-						TweenMax.to("#mov2", 0.5, {attr:{d:"M45,45 C49,41 51,39 55,35", stroke : '#d32d33'}});
+						
+						if(h.top > -400){
+							color = 'rgb(211,45,51)';
+						}
+						TweenMax.to("#mov1", 0.5, {attr:{d:"M35,35 C39,39 41,41 45,45"},stroke:color });
+						TweenMax.to("#mov2", 0.5, {attr:{d:"M45,45 C49,41 51,39 55,35"},stroke:color });
 
-						TweenMax.to("#mov3", 0.5, {attr:{x1:"45", stroke : '#d32d33', 'stroke-opacity' : "1"}});
-						TweenMax.to("#mov4", 0.5, {attr:{x2:"45", stroke : '#d32d33', 'stroke-opacity' : "1"}});
+						TweenMax.to("#mov3", 0.5, {attr:{x1:"45", 'stroke-opacity' : "1"}});
+						TweenMax.to("#mov4", 0.5, {attr:{x2:"45", 'stroke-opacity' : "1"}});
 
-						TweenMax.to("#mov5", 0.5, {attr:{d:"M35,55 C39,51 41,49 45,45", stroke : '#d32d33'}});
-						TweenMax.to("#mov6", 0.5, {attr:{d:"M45,45 C49,49 51,51 55,55", stroke : '#d32d33'}, onComplete: function(){animated=false;}});
+						TweenMax.to("#mov5", 0.5, {attr:{d:"M35,55 C39,51 41,49 45,45"},stroke:color});
+						TweenMax.to("#mov6", 0.5, {attr:{d:"M45,45 C49,49 51,51 55,55"},stroke:color, onComplete: function(){animated=false;}});
 						open = true;
 						TweenLite.set('#menu-mobile',{"z-index": 19});
 						TweenLite.to('#menu-mobile', 0.5, {opacity: 1});
-						TweenLite.to(e, 0.5, {color: "rgb(211,45,51)"});
+						TweenLite.to(e, 0.5, {color: color});
 
 						/*TweenLite.to('.line1', 0.5, {rotation: 45, transformOrigin:"left 50%", left: "39%", top: "29%"});
 						TweenLite.to('.line2', 0.5, {rotationY: 90, top: "47%", left: "38%"});
 						TweenLite.to('.line3', 0.5, {rotation: -45,left: "33%", top: "47%", onComplete: function(){animated=false;}});	*/				
 					}else{
+						if(h.top > -400){
+							color = 'rgb(255,255,255)';
+						}
 						open = false;
-						TweenMax.to("#mov1", 0.5, {attr:{d:"M35,38 C39,38 41,38 45,38", stroke : '#FFFFFF'}});
-						TweenMax.to("#mov2", 0.5, {attr:{d:"M45,38 C49,38 51,38 55,38", stroke : '#FFFFFF'}});
+						TweenMax.to("#mov1", 0.5, {attr:{d:"M35,38 C39,38 41,38 45,38"}, stroke : color});
+						TweenMax.to("#mov2", 0.5, {attr:{d:"M45,38 C49,38 51,38 55,38"}, stroke : color});
 
-						TweenMax.to("#mov3", 0.5, {attr:{x1:"35", stroke : '#FFFFFF', 'stroke-opacity' : "1"}});
-						TweenMax.to("#mov4", 0.5, {attr:{x2:"55", stroke : '#FFFFFF', 'stroke-opacity' : "1"}});
+						TweenMax.to("#mov3", 0.5, {attr:{x1:"35", stroke : color, 'stroke-opacity' : "1"}});
+						TweenMax.to("#mov4", 0.5, {attr:{x2:"55", stroke : color, 'stroke-opacity' : "1"}});
 
-						TweenMax.to("#mov5", 0.5, {attr:{d:"M35,52 C39,52 41,52 45,52", stroke : '#FFFFFF'}});
-						TweenMax.to("#mov6", 0.5, {attr:{d:"M45,52 C49,52 51,52 55,52", stroke : '#FFFFFF'}, onComplete: function(){animated=false;}});
+						TweenMax.to("#mov5", 0.5, {attr:{d:"M35,52 C39,52 41,52 45,52"}, stroke : color});
+						TweenMax.to("#mov6", 0.5, {attr:{d:"M45,52 C49,52 51,52 55,52"}, stroke : color, onComplete: function(){animated=false;}});
 
 						TweenLite.set('#menu-mobile',{"z-index": -1});
 						TweenLite.to('#menu-mobile', 0.5, {opacity: 0});
@@ -262,14 +309,81 @@ app.directive('screenDetector', ['$window', '$document','$timeout', 'animateServ
 		}
 	};
 }]);
+app.directive('stateMenuDesktop', ['$document', function ($document){
+	return {
+		restrict : 'AC',
+		link : function(s,e,a) {
+		    var scrollStates = {
+				section1 : $('#section1').height()/2,
+				section2 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ 350)/2,
+				section3 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height() + 350)/2,
+				section4 : (($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height() + 350)/2)+ 6900,
+			};
+			$document.bind('mousewheel DOMMouseScroll touchmove scroll', function(){
+				var scrollTop = $(document).scrollTop() / 2;
+				var states = e.find("a");
+				var time = 0.2;
+				var actualState; 
+				if(scrollStates.section2 > scrollTop+100){
+					TweenLite.to(states[0], time,{opacity: "1"});
+					actualState = 0;
+				}else if(scrollStates.section3 > scrollTop+100){
+					TweenLite.to(states[1], time,{opacity: "1"});
+					actualState = 1;
+				}else if(scrollStates.section4 > scrollTop+100){
+					TweenLite.to(states[2], time,{opacity: "1"});
+					actualState = 2;
+				}else{
+					TweenLite.to(states[3], time,{opacity: "1"});
+					actualState = 3;
+				}
+				resetStates(states, actualState);
+			});
+			function resetStates(states, avoidState){
+				angular.forEach(states, function(v, k) {
+					if(avoidState != k){
+						TweenLite.set(states[k], {opacity: '0.5'});
+					}
+				});	
+			}
+		}
+	};
+}]);
+app.directive('langMenu', [ function (){
+	return {
+		restrict : 'E',
+		link : function (s,e,a){
+			var options = e.find('div');
+			var hr = e.find('hr');
+			var i = e.find('i');
+			e.bind('touchstart click', function(){
 
+				if($(options).css('height') == '72px'){
+					TweenLite.to(options, 0.5, {ease: Back.easeIn.config(2), height: '0px', delay : 0.2 });
+					TweenLite.to(hr, 0.2, { ease: Power1.easeIn, width: '0%' , delay: 0.2});
+					TweenLite.to(i, 0.5, {ease: Back.easeIn.config(2), rotation:0});
+				}else{
+					TweenLite.to(options, 0.2, { ease: Power1.easeIn, height: '72px' });
+					TweenLite.to(hr, 0.2, { ease: Power1.easeIn, width: '80%' , delay: 0.2});
+					TweenLite.to(i, 0.5, {ease: Back.easeIn.config(2), rotation:180});
+				}
+			});
+			e.on('mouseleave', function() {
+					TweenLite.to(options, 0.5, {ease: Back.easeIn.config(2), height: '0px', delay : 0.2 });
+					TweenLite.to(hr, 0.2, { ease: Power1.easeIn, width: '0%' , delay: 0.2});
+					TweenLite.to(i, 0.5, {ease: Back.easeIn.config(2), rotation:0});
+			});
+		}
+	};
+}]);
+function test(){
+	 return $('#section1').height();
+}
 function skrollrInit(snSkrollr, deviceDetector){
-	
 	if(deviceDetector.isMobile()){
 		snSkrollr.init({ //mobile   
 	  	constants: {
 	  		section1: function(){
-	  			console.log($("#section1"));
 	  			var h = $("#section1").offset().top;
 	  			return h;
 	  		},
@@ -287,7 +401,7 @@ function skrollrInit(snSkrollr, deviceDetector){
 	  			console.log($("#section9").height());
 	  			console.log($("#section10").height());
 	  			console.log(h);*/
-	  			return h+310;
+	  			return h+200;
 	  		}
 	    }});
 
@@ -295,7 +409,7 @@ function skrollrInit(snSkrollr, deviceDetector){
 		snSkrollr.init({
 			constants: {
 				section11: function(){
-					return 100;
+					return 5000;
 				}
 			}
 		});	

@@ -11,7 +11,7 @@ body {
 	padding:0;
 	color: white;
 	@include opacity(1);
-	font-size: 1.333em; 
+	overflow-x:hidden;
 }
 .loading-page{
 	color: black;
@@ -22,14 +22,14 @@ body {
 			position: fixed;
 			position: absolute;
 			left: 0;
-			top: 12px;
-			width: 50px;
-			height: 50px;
+			top: 0px;
+			width: 100%;
+			height: 60px;
 			z-index: 20;
 			color: rgb(255,255,255);
 			svg{
 				position: absolute;
-			    top: -23px;
+			    top: -21px;
 			    left: -15px;
 			}
 			.line1,.line2,.line3,.text-burger{
@@ -52,7 +52,8 @@ body {
 			}
 			.text-burger{
 				font-size: 9px;
-				top: 70%;
+				top: 37px;
+				left: 18px;
 			}
 
 		}
@@ -76,6 +77,9 @@ body {
 		  		@include transform(translateY(-50%));
 		  		div{
 		  			margin: 8%;
+		  			a{
+		  				//color: rgb(211,45,51);
+		  			}
 		  		}
 		    }
 		    .lang-section{
@@ -83,9 +87,10 @@ body {
 		    	height: 65px;
 		    	position: absolute;
 		    	bottom: 0px;
+		    	text-align: center;
 		    	.en, .es, .fr{
 		    		display: inline-block;
-		    		width: 32.6%;
+		    		width: 32%;
 		    		height: 100%;
 		    		color: white;
 		    		background-color: rgba(215,215,215,0.3);
@@ -104,6 +109,16 @@ body {
 			top: 0;
 			width: 30px;
 			height: 30px;
+		}
+		.section11,
+		.section12,
+		.section13,
+		.section14{
+			.credits{
+				font-size: 12px;
+    			font-family: $font-2;
+    			margin-top: 20px;
+			}
 		}
 		.section11{
 			min-height: 100vh;
@@ -133,6 +148,7 @@ body {
 			}
 			.text-move{
 				position: absolute;
+
 			}
 		}
 		.section12{
@@ -236,8 +252,8 @@ body {
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			font-size:32px;
-			line-height: 44px;
+		    font-size: 26px;
+		    line-height: 38px;
 			@include transform(translate(-50%, -50%));
 		}
 		.lang-section{
@@ -263,14 +279,15 @@ body {
 			}
 		}
 		.un-logo{
-			position: absolute;
-			background-image: url("../assets/img/un-logo.png");
-			width: 100%;
-			height: 50px;
-			right: 20px;
-			top: 20px;
-			background-repeat: no-repeat;
-			background-position: right;
+		    position: absolute;
+		    background-image: url("../assets/img/un-logo.png");
+		    width: 110px;
+		    height: 40px;
+    		right: 13px;
+    		top: 11px;		    
+    		background-repeat: no-repeat;
+		    background-position: right;
+		    background-size: cover;
 		}
 
 	}
@@ -347,7 +364,7 @@ body {
 	}
 	#section7{
 		.svg-section{
-			margin-bottom: 60px;
+			margin-bottom: 85px;
 		}
 		h3,h4,.content,.stat,.stat-content{position: relative;}
 		h4{
@@ -355,6 +372,7 @@ body {
 			font-size: 12px;
 			margin: 20px 70px 0px 70px;
 			text-align: center;
+			line-height: 18px;
 		}
 		.arrow{
 			margin: 20px auto 50px auto;
@@ -369,8 +387,11 @@ body {
 			font-size:16px;
 			margin: 5% 12%;
 		}
+		.one{color: #470D00; color: rgba(64,0,0,1);}
+		.two{color: #470D00; color: rgba(64,0,0,0.6);}
+		.three{color: #470D00; color: rgba(64,0,0,0.5);}
+		.four{color: #470D00; color: rgba(64,0,0,0.5);}
 		.stat-section{
-			color: #470D00;
 			/*border-top: 1px solid #470D00;
 			border-bottom: 1px solid #470D00;*/
 			margin: 50px 12%;
@@ -379,7 +400,7 @@ body {
 			hr{
 				position: absolute;
 				width: 100%;
-				border-top: 1px solid #470D00;
+				border-top: 1px solid;
 				margin: 0;
 			}
 			hr.top{top:0;}
@@ -416,6 +437,10 @@ body {
 			margin: 0px 12%;
 			text-align: center;
 			position: relative;
+			line-height: 18px;
+		}
+		.arrow{
+			margin: 20px auto 0px auto;
 		}
 	}
 
@@ -641,54 +666,55 @@ body {
 
 	//stat1
 
-#section7{
-	.stat-1{
-		.circle-1,.circle-2,.circle-3{
-			stroke-dashoffset: 390;
-		    stroke-dasharray: 390;
-		    @include transform-origin(50% 50%);
-		    @include transform(rotate(-90deg));				
-		}
-		@include keyframes(boom) {
-		  0% { @include transform(matrix(0.20,0.00,0.00,0.20,150,10)); opacity:0;}
-		  5% { opacity:1;}
-		  20% { @include transform(matrix(1.00,0.00,0.00,1.00,0,0)); opacity:1;}
-		  100% { @include transform(matrix(1.00,0.00,0.00,1.00,0,0)); opacity:1;}
-		}
-		.boom{
-			@include animation('boom 2s infinite ease-in-out');
-		}
-		@include keyframes(arrows) {
-		  0% { @include transform(translateX(55px)); opacity:0;}
-		  20% { opacity:1;}
-		  80% { opacity:1;}
-		  100% { @include transform(translateX(75px)); opacity:0;}
-		}
-		.arrows{
-			@include animation('arrows 1s infinite ease-in-out');
-		}
-		@include keyframes(wave) {
-		  0% { @include transform(translateX(-10px)); opacity:0;}
-		  20% { opacity:1;}
-		  60% { opacity:1;}
-		  70% { @include transform(translateX(15px)); opacity:0;}
-		  100% { @include transform(translateX(20px)); opacity:0;}
-		}
-		.wave{
-			@include animation('wave 3s infinite ease-in-out');
-		}
-		@include keyframes(house) {
-		  0% {opacity:1;}
-		  50% { opacity:1;}
-		  53% { opacity:0;}
-		  100% { opacity:0;}
-		}
-		.house{
-			@include animation('house 3s infinite ease-in-out');
-		}
-	}
 
+.stat-1{
+	position: relative;
+	.circle-1,.circle-2,.circle-3{
+		stroke-dashoffset: 390;
+	    stroke-dasharray: 390;
+	    @include transform-origin(50% 50%);
+	    @include transform(rotate(-90deg));				
+	}
+	@include keyframes(boom) {
+	  0% { @include transform(matrix(0.20,0.00,0.00,0.20,150,10)); opacity:0;}
+	  5% { opacity:1;}
+	  20% { @include transform(matrix(1.00,0.00,0.00,1.00,0,0)); opacity:1;}
+	  100% { @include transform(matrix(1.00,0.00,0.00,1.00,0,0)); opacity:1;}
+	}
+	.boom{
+		@include animation('boom 2s infinite ease-in-out');
+	}
+	@include keyframes(arrows) {
+	  0% { @include transform(translateX(-10px)); opacity:0;}
+	  20% { opacity:1;}
+	  80% { opacity:1;}
+	  100% { @include transform(translateX(10px)); opacity:0;}
+	}
+	.arrows{
+		@include animation('arrows 1s infinite ease-in-out');
+	}
+	@include keyframes(wave) {
+	  0% { @include transform(translateX(-10px)); opacity:0;}
+	  20% { opacity:1;}
+	  60% { opacity:1;}
+	  70% { @include transform(translateX(15px)); opacity:0;}
+	  100% { @include transform(translateX(20px)); opacity:0;}
+	}
+	.wave{
+		@include animation('wave 3s infinite ease-in-out');
+	}
+	@include keyframes(house) {
+	  0% {opacity:1;}
+	  50% { opacity:1;}
+	  53% { opacity:0;}
+	  100% { opacity:0;}
+	}
+	.house{
+		@include animation('house 3s infinite ease-in-out');
+	}
 }
+
+
 #section-between-12-13{
 	@include keyframes(body) {
 	  0% { stroke-dashoffset: 330; opacity: 1;}

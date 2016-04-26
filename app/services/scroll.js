@@ -21,6 +21,7 @@ angular.module('app').service("scrollService",[ '$document','deviceDetector', fu
 
         if(delta < sensitive*(-1)){return "down";}
         if(delta > sensitive){return "up";}
+
         return "";
 	}
 	function getDirectionOnTouchMove(e){//mobileTouchMove up down left right

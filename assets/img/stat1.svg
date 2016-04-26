@@ -3,132 +3,130 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="236px" height="147px" viewBox="0 0 236 147" enable-background="new 0 0 236 147" xml:space="preserve">
-
-<circle data-17-bottom="stroke-dashoffset: 390; stroke-dasharray: 390;" data--83-bottom="stroke-dashoffset: 390; stroke-dasharray: 507;" class="circle-1" fill="none" stroke="#D07250" stroke-width="53" stroke-miterlimit="10" cx="66.7" cy="80.5" r="31"/>
-<circle data-50-bottom="stroke-dashoffset: 390; stroke-dasharray: 390;" data--50-bottom="stroke-dashoffset: 390; stroke-dasharray: 624;" class="circle-2" opacity="0.6" fill="none" stroke="#400000" stroke-width="9" stroke-miterlimit="10" cx="66.7" cy="80.442" r="62"/>
-<circle data-100-bottom="stroke-dashoffset: 390; stroke-dasharray: 390;" data-bottom="stroke-dashoffset: 390; stroke-dasharray: 800;" class="circle-3" opacity="0.1" fill="none" stroke="#400000" stroke-width="9" stroke-miterlimit="10" cx="66.183" cy="80.5" r="62"/>
-
-<path id="Fill-1" display="none" fill="#D07250" d="M90.391,132.603c-7.543,3.48-15.611,5.243-23.986,5.243
+<circle class="circle-1" data-300-bottom="stroke-dashoffset:390;" data--150-bottom="stroke-dashoffset:270;" fill="none" stroke="rgba(64,0,0,0.2)" stroke-width="63" stroke-miterlimit="10" cx="66.7" cy="80.5" r="31"/>
+<circle class="circle-2" data-200-bottom="stroke-dashoffset:390;" data--50-bottom="stroke-dashoffset:150;" opacity="0.6" fill="none" stroke="#400000" stroke-width="9" stroke-miterlimit="10" enable-background="new    " cx="66.7" cy="80.442" r="62"/>
+<circle class="circle-3" data-100-bottom="stroke-dashoffset:390;" data-bottom="stroke-dashoffset:0;" opacity="0.1" fill="none" stroke="#400000" stroke-width="9" stroke-miterlimit="10" enable-background="new    " cx="66.183" cy="80.5" r="62"/>
+<path id="Fill-1" display="none" fill="#D07250" d="M90.391,132.604c-7.543,3.479-15.611,5.242-23.986,5.242
 	c-12.242,0-23.915-3.806-33.771-11.002l33.771-46.328V23.04c31.63,0,57.369,25.745,57.369,57.403
-	C123.773,102.771,110.673,123.246,90.391,132.603z"/>
+	C123.773,102.771,110.673,123.246,90.391,132.604z"/>
 <path id="Fill-3" display="none" fill="#400000" fill-opacity="0.5038" d="M94.176,140.811c-8.736,4.031-18.078,6.074-27.772,6.074
-	c-14.167,0-27.691-4.402-39.102-12.736l5.331-7.305c9.857,7.196,21.529,11.002,33.771,11.002c8.375,0,16.443-1.763,23.986-5.243
-	c20.283-9.356,33.383-29.831,33.383-52.159c0-31.658-25.739-57.403-57.369-57.403V14c36.617,0,66.404,29.804,66.404,66.443
+	c-14.167,0-27.691-4.402-39.102-12.736l5.331-7.305c9.857,7.196,21.529,11.002,33.771,11.002c8.375,0,16.443-1.763,23.986-5.242
+	c20.283-9.356,33.383-29.832,33.383-52.16c0-31.657-25.739-57.402-57.37-57.402V14c36.617,0,66.405,29.804,66.405,66.443
 	C132.809,106.287,117.639,129.98,94.176,140.811z"/>
 <path id="Fill-5" display="none" fill="#400000" fill-opacity="0.1" d="M32.633,126.844l-5.331,7.305
-	C13.037,123.744,3.361,107.797,0.741,90.414C0.244,87.133,0,83.778,0,80.443C0,43.804,29.787,14,66.404,14v9.04
+	C13.037,123.744,3.361,107.797,0.741,90.414C0.244,87.133,0,83.777,0,80.443C0,43.804,29.787,14,66.404,14v9.04
 	c-31.639,0-57.37,25.745-57.37,57.403c0,2.883,0.217,5.785,0.641,8.623C11.935,104.082,20.301,117.85,32.633,126.844"/>
+<g id="Group-28" transform="translate(0.000000, 4.000000)">
+	<g id="Page-1_2_" transform="translate(72.000000, 0.000000)">
+		<g id="Clip-2_1_">
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 147.9844 36)" fill="#400000" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">conflict settings</text>
+</g>
+<path class="boom" id="Fill-1_2_" fill="rgba(64,0,0,0.6)" d="M198.494,26.774c-1.848-1.579-3.693-3.158-5.555-4.748c-1.336,2.634-2.662,5.247-4.015,7.912
+	c-0.772-3.209-1.53-6.361-2.297-9.55c-2.917,1.086-5.817,2.167-8.718,3.247c-0.01-0.011-0.02-0.023-0.029-0.034
+	c1.661-2.024,3.322-4.048,5.014-6.108c-2.32-0.321-4.604-0.636-6.888-0.952c-0.003-0.014-0.006-0.027-0.008-0.041
+	c2.349-0.791,4.697-1.582,7.088-2.388l-6.448-7.461c0.008-0.014,0.014-0.027,0.021-0.041c3.506,0.827,7.013,1.654,10.541,2.486
+	c0.381-3.05,0.759-6.07,1.137-9.09L188.381,0c1.26,2.571,2.521,5.143,3.796,7.745c2.031-2.081,4.044-4.142,6.056-6.204l0.037,0.022
+	c-0.783,2.726-1.567,5.451-2.362,8.209c3.149-0.127,6.262-0.253,9.374-0.379c0.007,0.016,0.015,0.032,0.021,0.048
+	c-2.616,1.875-5.231,3.75-7.866,5.637c2.857,2.21,5.697,4.406,8.537,6.603c-0.006,0.012-0.012,0.025-0.018,0.038
+	c-3.305-0.602-6.61-1.204-9.953-1.813c0.857,2.306,1.699,4.57,2.54,6.834C198.525,26.751,198.51,26.763,198.494,26.774"/>
+<g id="Group-31" transform="translate(0.000000, 60.000000)">
+	<text transform="matrix(1 0 0 1 154.5957 31)" fill="#400000" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">displacement</text>
+</g>
+<g id="Group-16" class="arrows">
+	<g id="Page-1_4_" transform="translate(0.100952, 0.912757)">
+		<path id="Fill-1_3_" fill="rgba(64,0,0,0.6)" d="M180.001,64.111h14.523v-0.964h-14.523V64.111z"/>
+		<path id="Fill-2" fill="rgba(64,0,0,0.6)" d="M194.131,60v7.257l6.402-3.628L194.131,60z"/>
+	</g>
+	<g id="Page-1-Copy" transform="translate(0.100952, 10.175664)">
+		<path id="Fill-1_4_" fill="#91402D" d="M180.001,64.111h14.523v-0.964h-14.523V64.111z"/>
+		<path  id="Fill-2_1_" fill="#91402D" d="M194.131,60v7.258l6.402-3.629L194.131,60z"/>
+	</g>
+</g>
+<g id="Group-40" transform="translate(0.000000, 111.000000)">
+	<g id="Page-1_5_" transform="translate(62.000000, 0.000000)">
+		<g id="Group-39" transform="translate(0.280967, 0.510094)">
+			<g id="Group-3_1_">
+				<g id="Clip-2_2_">
+				</g>
+				<defs>
+					<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="110.001" y="0.104" width="31.227" height="15.854">
+						<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+					</filter>
+				</defs>
+				<mask maskUnits="userSpaceOnUse" x="110.001" y="0.104" width="31.227" height="15.854" id="mask-8">
+					<g filter="url(#Adobe_OpacityMaskFilter)">
+						<path id="path-7" fill="#FFFFFF" d="M125.614,15.959H110V0.104h31.227v15.854H125.614L125.614,15.959z"/>
+					</g>
+				</mask>
+				<path id="Fill-1_5_" class="wave"  fill="rgba(64,0,0,0.6)" d="M133.739,15.959h-23.672c-0.021-0.027-0.045-0.055-0.065-0.08
+					c0.081-0.052,0.18-0.086,0.245-0.152c3.97-3.896,7.94-7.789,11.902-11.692c2.176-2.146,4.778-3.444,7.838-3.813
+					c3.559-0.43,6.83,0.326,9.752,2.402c0.461,0.326,0.877,0.711,1.312,1.071c0.06,0.048,0.104,0.11,0.178,0.188
+					c-3.11,0.127-5.548,1.412-7.155,4.002C132.459,10.478,132.444,13.196,133.739,15.959"/>
+			</g>
+			<g id="Group-6_1_" transform="translate(28.391269, 8.978128)">
+				<g id="Clip-5_1_">
+				</g>
+				<defs>
+					<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="110.057" y="0.109" width="6.328" height="6.891">
+						<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+					</filter>
+				</defs>
+				<mask maskUnits="userSpaceOnUse" x="110.057" y="0.109" width="6.328" height="6.891" id="mask-10">
+					<g filter="url(#Adobe_OpacityMaskFilter_1_)">
+						<path id="path-9" fill="#FFFFFF" d="M116.384,7V0.109h-6.327V7H116.384L116.384,7z"/>
+					</g>
+				</mask>
+				<path class="house" id="Fill-4_1_" fill="rgba(64,0,0,0.6)" d="M112.52,7h-2.462V6.613c0-1.063-0.004-2.125,0.003-3.187
+					c0.001-0.095,0.026-0.217,0.089-0.278c1.011-1.004,2.029-2.002,3.088-3.039c0.262,0.268,0.506,0.522,0.756,0.771
+					c0.746,0.736,1.495,1.467,2.238,2.205c0.068,0.067,0.146,0.168,0.146,0.254c0.01,1.213,0.006,2.427,0.006,3.66h-2.451"/>
+			</g>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 144.5215 31)" fill="#400000" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">natural disasters</text>
+</g>
 <g id="Group-38" transform="translate(50.843068, 29.097330)">
 	<g id="Page-1_1_">
 		<g id="Group-3" transform="translate(0.000000, 14.335209)">
 			<g id="Clip-2">
 			</g>
 			<defs>
-				<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="0" y="14.208" width="29.711" height="62.666">
+				<filter id="Adobe_OpacityMaskFilter_2_" filterUnits="userSpaceOnUse" x="0.001" y="14.209" width="29.711" height="62.664">
 					<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
 				</filter>
 			</defs>
-			<mask maskUnits="userSpaceOnUse" x="0" y="14.208" width="29.711" height="62.666" id="mask-2">
-				<g filter="url(#Adobe_OpacityMaskFilter)">
-					<path id="path-1" fill="#FFFFFF" d="M0,76.872h29.711V14.208H0V76.872L0,76.872z"/>
+			<mask maskUnits="userSpaceOnUse" x="0.001" y="14.209" width="29.711" height="62.664" id="mask-2_2_">
+				<g filter="url(#Adobe_OpacityMaskFilter_2_)">
+					<path id="path-1_2_" fill="#FFFFFF" d="M0,76.872h29.711V14.208H0V76.872L0,76.872z"/>
 				</g>
 			</mask>
-			<path id="Fill-1_1_" mask="url(#mask-2)" fill="#90402D" d="M6.636,25.122c2.029,1.453,4.196,3.005,6.421,4.598
-				c-0.69-3.057-1.369-6.063-2.089-9.254C9.466,22.08,8.061,23.59,6.636,25.122 M27.207,51.404H20.14
-				c-0.155,1.749-0.306,3.447-0.455,5.146c-0.344,3.902-0.688,7.805-1.029,11.707c-0.165,1.881-0.333,3.76-0.485,5.642
-				c-0.129,1.59-0.957,2.63-2.356,2.919c-1.791,0.369-3.544-1.15-3.387-2.967c0.468-5.41,0.954-10.82,1.429-16.23
-				c0.181-2.053,0.352-4.107,0.531-6.207H3.309c3.047-5.985,6.054-11.891,9.093-17.859c-0.388,0.113-0.7,0.24-1.024,0.292
-				c-0.666,0.106-1.278-0.069-1.824-0.458c-2.836-2.02-5.681-4.027-8.5-6.07c-1.273-0.922-1.411-2.708-0.31-3.793
+			<path id="Fill-1_1_" fill="rgba(64,0,0,0.6)" d="M6.636,25.122c2.029,1.453,4.196,3.005,6.421,4.598
+				c-0.69-3.057-1.369-6.063-2.089-9.254C9.466,22.08,8.061,23.59,6.636,25.122 M27.207,51.403H20.14
+				c-0.155,1.75-0.306,3.447-0.455,5.146c-0.344,3.902-0.688,7.805-1.029,11.707c-0.165,1.881-0.333,3.76-0.485,5.643
+				c-0.129,1.59-0.957,2.629-2.356,2.918c-1.791,0.369-3.544-1.149-3.387-2.967c0.468-5.41,0.954-10.82,1.429-16.229
+				c0.181-2.054,0.352-4.107,0.531-6.207H3.309c3.047-5.985,6.054-11.892,9.093-17.859c-0.388,0.113-0.7,0.24-1.024,0.292
+				c-0.666,0.106-1.278-0.068-1.824-0.458c-2.836-2.02-5.681-4.027-8.5-6.07c-1.273-0.922-1.411-2.708-0.31-3.793
 				c2.442-2.404,4.872-4.823,7.374-7.165c1.975-1.847,4.34-2.561,7.026-1.923c1.36,0.323,2.436,1.104,3.208,2.261
-				c3.332,4.999,6.676,9.991,9.97,15.015c2.175,3.317,1.754,7.658-0.96,10.566c-0.333,0.357-0.436,0.703-0.412,1.188
-				c0.126,2.508,0.207,5.017,0.3,7.525C27.255,51.11,27.226,51.232,27.207,51.404"/>
+				c3.332,4.999,6.676,9.991,9.97,15.015c2.175,3.316,1.754,7.658-0.96,10.566c-0.333,0.356-0.436,0.703-0.412,1.188
+				c0.126,2.508,0.207,5.018,0.3,7.525C27.255,51.11,27.226,51.232,27.207,51.403"/>
 		</g>
 		<g id="Group-6" transform="translate(8.802274, 0.007057)">
 			<g id="Clip-5">
 			</g>
 			<defs>
-				<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="0.17" y="14.207" width="12.628" height="12.565">
+				<filter id="Adobe_OpacityMaskFilter_3_" filterUnits="userSpaceOnUse" x="0.17" y="14.207" width="12.627" height="12.565">
 					<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
 				</filter>
 			</defs>
-			<mask maskUnits="userSpaceOnUse" x="0.17" y="14.207" width="12.628" height="12.565" id="mask-4">
-				<g filter="url(#Adobe_OpacityMaskFilter_1_)">
-					<path id="path-3" fill="#FFFFFF" d="M12.798,14.207H0.17v12.565h12.628V14.207L12.798,14.207z"/>
+			<mask maskUnits="userSpaceOnUse" x="0.17" y="14.207" width="12.627" height="12.565" id="mask-4_2_">
+				<g filter="url(#Adobe_OpacityMaskFilter_3_)">
+					<path id="path-3_2_" fill="#FFFFFF" d="M12.798,14.207H0.17v12.565h12.628V14.207L12.798,14.207z"/>
 				</g>
 			</mask>
-			<path id="Fill-4" mask="url(#mask-4)" fill="#90402D" d="M6.505,26.772c-3.475,0.007-6.326-2.818-6.335-6.28
+			<path id="Fill-4"  fill="rgba(64,0,0,0.6)" d="M6.505,26.772c-3.475,0.007-6.326-2.818-6.335-6.28
 				c-0.01-3.439,2.863-6.29,6.333-6.285c3.456,0.005,6.291,2.824,6.294,6.257C12.801,23.945,9.989,26.764,6.505,26.772"/>
 		</g>
 	</g>
-</g>
-<g id="Group-28" transform="translate(0.000000, 4.000000)">
-	<g id="Page-1_2_" transform="translate(72.000000, 0.000000)">
-		<g id="Clip-2_1_">
-		</g>
-	</g>
-	<text transform="matrix(1 0 0 1 147.9844 36)" fill="#400000" font-family="'Arial-ItalicMT'" font-size="12">conflict settings</text>
-</g>
-<path class="boom" id="Fill-1_2_" fill="#91402D" d="M198.494,26.774c-1.847-1.579-3.693-3.158-5.555-4.748c-1.336,2.634-2.662,5.247-4.014,7.912
-	c-0.772-3.209-1.53-6.361-2.297-9.55c-2.917,1.086-5.817,2.167-8.718,3.247c-0.01-0.011-0.02-0.023-0.029-0.034
-	c1.661-2.024,3.322-4.048,5.013-6.108c-2.32-0.321-4.604-0.636-6.887-0.952c-0.003-0.014-0.006-0.027-0.008-0.041
-	c2.349-0.791,4.697-1.582,7.088-2.388l-6.448-7.461c0.007-0.014,0.014-0.027,0.021-0.041c3.506,0.827,7.013,1.654,10.541,2.486
-	c0.381-3.05,0.759-6.07,1.137-9.09L188.381,0c1.26,2.571,2.521,5.143,3.796,7.745c2.031-2.081,4.044-4.142,6.056-6.204l0.037,0.022
-	c-0.784,2.726-1.568,5.451-2.363,8.209c3.149-0.127,6.262-0.253,9.374-0.379c0.007,0.016,0.015,0.032,0.021,0.048
-	c-2.616,1.875-5.231,3.75-7.866,5.637c2.857,2.21,5.697,4.406,8.537,6.603c-0.006,0.012-0.012,0.025-0.018,0.038
-	c-3.305-0.602-6.61-1.204-9.953-1.813c0.857,2.306,1.699,4.57,2.54,6.834C198.525,26.751,198.51,26.763,198.494,26.774"/>
-<g id="Group-31" transform="translate(0.000000, 60.000000)">
-	<g id="Group-16" class="arrows">
-		<g id="Page-1_4_" transform="translate(0.100952, 0.912757)">
-			<path id="Fill-1_3_" fill="#91402D" d="M110.001,4.111h14.523V3.147h-14.523V4.111z"/>
-			<path id="Fill-2" fill="#91402D" d="M124.131,0v7.257l6.403-3.628L124.131,0z"/>
-		</g>
-		<g id="Page-1-Copy" transform="translate(0.100952, 10.175664)">
-			<path id="Fill-1_4_" fill="#91402D" d="M110.001,4.111h14.523V3.147h-14.523V4.111z"/>
-			<path id="Fill-2_1_" fill="#91402D" d="M124.131,0v7.258l6.403-3.629L124.131,0z"/>
-		</g>
-	</g>
-	<text transform="matrix(1 0 0 1 154.5957 31)" fill="#400000" font-family="'Arial-ItalicMT'" font-size="12">displacement</text>
-</g>
-<g id="Group-40" transform="translate(0.000000, 111.000000)">
-	<g id="Page-1_5_" transform="translate(62.000000, 0.000000)">
-		<g id="Group-39" transform="translate(0.280967, 0.510094)">
-			<g id="Group-3_1_" class="wave">
-				<g id="Clip-2_2_">
-				</g>
-				<defs>
-					<filter id="Adobe_OpacityMaskFilter_2_" filterUnits="userSpaceOnUse" x="110" y="0.104" width="31.227" height="15.854">
-						<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-					</filter>
-				</defs>
-				<mask maskUnits="userSpaceOnUse" x="110" y="0.104" width="31.227" height="15.854" id="mask-8">
-					<g filter="url(#Adobe_OpacityMaskFilter_2_)">
-						<path id="path-7" fill="#FFFFFF" d="M125.614,15.958H110V0.104h31.227v15.854H125.614L125.614,15.958z"/>
-					</g>
-				</mask>
-				<path id="Fill-1_5_" mask="url(#mask-8)" fill="#91402D" d="M133.739,15.958h-23.672c-0.021-0.027-0.045-0.054-0.066-0.08
-					c0.082-0.051,0.18-0.086,0.246-0.152c3.969-3.895,7.94-7.789,11.901-11.692c2.177-2.146,4.779-3.444,7.839-3.813
-					c3.558-0.43,6.83,0.326,9.752,2.402c0.46,0.326,0.877,0.711,1.311,1.071c0.059,0.048,0.105,0.11,0.178,0.188
-					c-3.111,0.128-5.548,1.412-7.156,4.002C132.459,10.478,132.443,13.196,133.739,15.958"/>
-			</g>
-			<g id="Group-6_1_" class="house" transform="translate(28.391269, 8.978128)">
-				<g id="Clip-5_1_">
-				</g>
-				<defs>
-					<filter id="Adobe_OpacityMaskFilter_3_" filterUnits="userSpaceOnUse" x="110.057" y="0.109" width="6.328" height="6.891">
-						<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-					</filter>
-				</defs>
-				<mask maskUnits="userSpaceOnUse" x="110.057" y="0.109" width="6.328" height="6.891" id="mask-10">
-					<g filter="url(#Adobe_OpacityMaskFilter_3_)">
-						<path id="path-9" fill="#FFFFFF" d="M116.384,7V0.109h-6.327V7H116.384L116.384,7z"/>
-					</g>
-				</mask>
-				<path id="Fill-4_1_" mask="url(#mask-10)" fill="#91402D" d="M112.52,7h-2.462V6.613c0-1.063-0.003-2.124,0.003-3.186
-					c0.001-0.095,0.026-0.217,0.089-0.278c1.011-1.005,2.029-2.002,3.088-3.04c0.262,0.268,0.506,0.523,0.756,0.771
-					c0.746,0.736,1.495,1.467,2.238,2.205c0.068,0.067,0.146,0.168,0.146,0.254c0.01,1.213,0.006,2.426,0.006,3.66h-2.451"/>
-			</g>
-		</g>
-	</g>
-	<text transform="matrix(1 0 0 1 144.5215 31)" fill="#400000" font-family="'Arial-ItalicMT'" font-size="12">natural disasters</text>
 </g>
 </svg>

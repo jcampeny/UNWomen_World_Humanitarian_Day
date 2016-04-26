@@ -13,8 +13,9 @@ module.exports = function(grunt) {
     "bower_components/angular-sanitize/angular-sanitize.min.js",
     "bower_components/jquery/dist/jquery.min.js",
     "bower_components/bootstrap/dist/js/bootstrap.min.js",
-    "bower_components/angular-skrollr/dist/angular-skrollr.min.js",
+    "bower_components/angular-skrollr/dist/angular-skrollr.js",
     "bower_components/skrollr/dist/skrollr.min.js",
+    "bower_components/skrollr/dist/skrollr.menu.js",
     "bower_components/re-tree/re-tree.min.js",
     "bower_components/ng-device-detector/ng-device-detector.min.js",
     "bower_components/gsap/src/minified/*"
