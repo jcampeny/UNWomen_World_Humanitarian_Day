@@ -19,19 +19,19 @@ angular.module('app').service("animateService", [function( ) {
 	    function fade(e, time, delay, value){
 	    	switch(value){
 	    		case "right":
-	    			TweenLite.fromTo(e,time,{opacity: 0, left: "-30px"},{opacity: 1,left: "0px", delay:delay});
+	    			TweenLite.fromTo(e,time,{ left: "-30px"},{left: "0px", delay:delay});
 	    			break;
 	    		default:
-	    			TweenLite.to(e,time,{opacity: 1, delay:delay});
+	    			TweenLite.to(e,time,{ delay:delay});
 	    	}
 	    	
 	    }
 	    function number(e, time, delay, value){
-	    	TweenLite.to(e,time,{opacity: 1, delay:delay});
+	    	TweenLite.to(e,time,{ delay:delay});
 	    	var numberToReach = parseFloat(value);
 	    	var show;
 	    	var counter = { var: 0 };
-	    	if(((numberToReach%1) !== 0 ) || numberToReach < 10){
+	    	if(((numberToReach%1) !== 0 ) || numberToReach < 5){
 				show = function() {
 					$(e).text(numberWithCommas(Math.round(counter.var * 10) / 10));
 				};

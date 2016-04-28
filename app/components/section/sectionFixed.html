@@ -12,18 +12,51 @@
 				<path id="mov5" d="M35,52 C39,52 41,52 45,52" fill="none" stroke-width="1px"  data-400-start="stroke: rgb(255,255,255);" data-700-start="stroke:rgb(211,45,51);" data-_section11-start="stroke:rgb(230,154,105);" data-end="stroke:rgb(79,186,228);"></path>
 				<path id="mov6" d="M45,52 C49,52 51,52 55,52" fill="none" stroke-width="1px"  data-400-start="stroke: rgb(255,255,255);" data-700-start="stroke:rgb(211,45,51);" data-_section11-start="stroke:rgb(230,154,105);" data-end="stroke:rgb(79,186,228);"></path>
 			</svg>
-			<div class="text-burger"><span data-400-start="color: rgb(255,255,255);" data-700-start="color:rgb(211,45,51);" data-_section11-start="color:rgb(230,154,105);" data-end="color:rgb(79,186,228);" ng-show="clicked">Menu</span><span data-400-start="color: rgb(255,255,255);" data-700-start="color:rgb(211,45,51);" data-_section11-start="color:rgb(230,154,105);" data-end="color:rgb(79,186,228);" ng-show="!clicked">Close</span></div>
+			<div class="text-burger">
+				<span 
+					data-400-start="color: rgb(255,255,255);" 
+					data-700-start="color:rgb(211,45,51);" 
+					data-_section11-start="color:rgb(230,154,105);" 
+					data-end="color:rgb(79,186,228);" 
+					ng-show="clicked">Menu</span>
+				<span 
+					data-400-start="color: rgb(211,45,51);" 
+					data-700-start="color:rgb(211,45,51);" 
+					data-_section11-start="color:rgb(230,154,105);" 
+					data-end="color:rgb(79,186,228);" 
+					ng-show="!clicked">Close</span></div>
 
 		</burger-menu>
 		<div id="menu-mobile">
 			<div class="options">
-				<div><a href="#data" data-menu-top="{{scrollToMobile.section1}}" data-start="color:rgb(211,45,51); text-decoration:underline;" data-_section11-start="color:rgb(230,154,105);" data-end="color:rgb(79,186,228);" data-1800="text-decoration:none;">Today’s Situation</a></div>
-				<div><a href="#data" data-menu-top="{{scrollToMobile.section2}}" data-start="color:rgb(211,45,51);" data-_section11-start="color:rgb(230,154,105);" data-end="color:rgb(79,186,228);"
-				data-1800="text-decoration:none;" data-1801="text-decoration:underline;" data-5599="text-decoration:underline;" data-5600="text-decoration:none;">Gender Impacts</a></div>
-				<div><a href="#data" data-menu-top="{{scrollToMobile.section3}}" data-start="color:rgb(211,45,51);" data-_section11-start="color:rgb(230,154,105);" data-end="color:rgb(79,186,228);"
-				data-5599="text-decoration:none;" data-5600="text-decoration:underline;" data-10099="text-decoration:underline;" data-10100="text-decoration:none;">Agents of Change</a></div>
-				<div><a href="#data" data-menu-top="{{scrollToMobile.section4}}" data-start="color:rgb(211,45,51);" data-_section11-start="color:rgb(230,154,105);" data-end="color:rgb(79,186,228);"
-				data-10099="text-decoration:none;" data-10100="text-decoration:underline;" data-end="text-decoration:underline;">Commitments</a></div>
+				<div class="scroll-burger">
+					<a href="#data" 
+						data-menu-top="{{scrollToMobile.section1}}" 
+						data-start="color:rgb(211,45,51);" 
+						data-_section11-start="color:rgb(230,154,105);" 
+						data-end="color:rgb(79,186,228);" 
+						ng-click="clicked = !clicked"><i data-0="display:inline-block;" data-1700="display:none;" class="fa fa-circle" aria-hidden="true"></i>Today’s Situation<i data-0="display:inline-block;" data-1700="display:none;" class="fa fa-circle" aria-hidden="true"></i></a></div>
+				<div class="scroll-burger">
+					<a href="#data" 
+						data-menu-top="{{scrollToMobile.section2}}" 
+						data-start="color:rgb(211,45,51);" 
+						data-_section11-start="color:rgb(230,154,105);" 
+						data-end="color:rgb(79,186,228);"
+						ng-click="clicked = !clicked"><i data-0="display:none;" data-1700="display:inline-block;" data-5500="display:none;" class="fa fa-circle" aria-hidden="true"></i>Gender Impacts<i data-0="display:none;" data-1700="display:inline-block;" data-5500="display:none;" class="fa fa-circle" aria-hidden="true"></i></a></div>
+				<div class="scroll-burger">
+					<a href="#data" 
+						data-menu-top="{{scrollToMobile.section3}}" 
+						data-start="color:rgb(211,45,51);" 
+						data-_section11-start="color:rgb(230,154,105);" 
+						data-end="color:rgb(79,186,228);"
+						ng-click="clicked = !clicked"><i data-0="display:none;" data-5500="display:inline-block;" data-10200="display:none;"  class="fa fa-circle" aria-hidden="true"></i>Agents of Change<i data-0="display:none;" data-5500="display:inline-block;" data-10200="display:none;"  class="fa fa-circle" aria-hidden="true"></i></a></div>
+				<div class="scroll-burger">
+					<a href="#data" 
+						data-menu-top="{{scrollToMobile.section4}}" 
+						data-start="color:rgb(211,45,51);" 
+						data-_section11-start="color:rgb(230,154,105);" 
+						data-end="color:rgb(79,186,228);"
+						ng-click="clicked = !clicked"><i data-0="display:none;" data-10200="display:inline-block;" class="fa fa-circle" aria-hidden="true"></i>Commitments<i data-0="display:none;" data-10200="display:inline-block;" class="fa fa-circle" aria-hidden="true"></i></a></div>
 			</div>
 			<div class="lang-section">
 				<a class="en active" data-start="background:rgb(211,45,51);" data-_section11-start="background:rgb(230,154,105);" data-end="background:rgb(79,186,228);">English</a>
@@ -47,6 +80,7 @@
 				data-_section11-700="bottom:100%;">
 				<h3>Syria refugee crisis</h3>
 				<div class="content">UN Women’s largest cashfor-work programme for women in Jordan’s Za’atari refugee camp increased the average income of fulltime workers, improving diets, household hygiene and healthcare. 
+				<hr>
 					<div class="credits">Credit: UN Women/Christopher Herwig</div>
 				</div>
 
@@ -67,7 +101,8 @@
 				data-_section11-1000="bottom:-100%;" 
 				data-_section11-1700="bottom:100%;">
 				<h3>Ebola epidemic, West Africa</h3>
-				<div class="content">As primary care providers, nurses and midwives, women were at increased risk to contracting Ebola when the outbreak hit in 2014. UN Women mobilized to educate and empower women to help curb the spread of Ebola in the region and in particular rural areas. 
+				<div class="content">As primary care providers, nurses and midwives, women were at increased risk to contracting Ebola when the outbreak hit in 2014. UN Women mobilized to educate and empower women to help curb the spread of Ebola in the region and in particular rural areas.
+				<hr> 
 					<div class="credits">Credit: UN Women/Christopher Herwig</div>
 				</div>
 			</div>
@@ -88,6 +123,7 @@
 				data-_section11-2700="bottom:100%;">
 				<h3>Earthquake, Nepal</h3>
 				<div class="content">When an earthquake rocked Nepal in 2015, UN Women partnered with national women’s groups and civil society to develop an early recovery strategy through a “Common Charter of Women’s Demands”. 
+				<hr>
 					<div class="credits">Credit: Samir Jung Thapa</div>
 				</div>
 			</div>
@@ -109,6 +145,7 @@
 				data-_section11-3700="bottom:100%;">
 				<h3>Cyclone, Fiji</h3>
 				<div class="content">Following the devastating cyclone in Fiji in 2016, UN Women has been working with local partners to promote economic opportunities for women through market spaces.  
+				<hr>
 					<div class="credits">Credit: Murray Lloyd Photography</div>
 				</div>
 			</div>
@@ -133,7 +170,7 @@
 			data-_section11-4300="top:100%;" 
 			data-_section11-4700="top:0%;"
 			data-_section11-4800="top:0%;"
-			data-_section11-5200="top:-100%;">
+			data-_section11-5200="top:-200%;">
 			<h3 class="title"  data-_section11-4200="right:20px; opacity:0;" data-_section11-4300="right:0px; opacity:1;">Commitments we must make</h3>
 			<div class="arrow-right"><img src="assets/img/slide-arrow.png"></div>
 			<div class="arrow-left"><img src="assets/img/slide-arrow.png"></div>
@@ -143,33 +180,34 @@
 			</section>
 			<section >
 				<h3 class="title">Commitment 2:</h3>
-				<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+				<div class="content">Ensure universal access to sexual and reproductive health and reproductive rights as agreed in accordance with the Programme of Action of the International Conference on Population and Development and the Beijing Platform for Action and the Outcome documents of their review conferences for all women and adolescent girls in crisis settings.</div>
 			</section>
 			<section >
 				<h3 class="title">Commitment 3:</h3>
-				<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+				<div class="content">Implement a coordinated global approach to prevent and respond to gender-based violence in crisis contexts, including through the Call to Action on Protection from Genderbased Violence in Emergencies.</div>
 			</section>
 			<section >
 				<h3 class="title">Commitment 4:</h3>
-				<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+				<div class="content">Ensure that humanitarian programming is gender-responsive.</div>
 			</section>
 			<section >
 				<h3 class="title">Commitment 5:</h3>
-				<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+				<div class="content">Fully comply with humanitarian policies, frameworks and legally binding documents related to gender equality, women’s empowerment and women’s rights.</div>
 			</section>
 		</div>
 
 		<div id="section14"
 			data-_section11-4650="top:100%;" 
 			data-_section11-5050="top:0%;">
-			<h3 class="title" data-_section11-5000="opacity:0;top:50px;" data-_section11-5100="opacity:1;top:0px;">We can make a difference.</h3>
-			<div class="icons" data-_section11-5050="opacity:0;top:55%;" data-_section11-5150="opacity:1;top:45%;">
+			<h3 class="title" data-_section11-5000="opacity:0;top:50px;" data-_section11-5100="opacity:1;top:0px;">Step it up for gender equality.</h3>
+			<h4 class="title" data-_section11-5000="opacity:0;top:50px;" data-_section11-5100="opacity:1;top:0px;"><strong>Planet 50-50</strong> by 2030.</h4>
+			<div class="icons" data-_section11-5050="opacity:0;top:65%;" data-_section11-5150="opacity:1;top:55%;">
 				<a class="more"></a>
 				<a class="icon-1"></a>
 				<a class="icon-2"></a>
 			</div>
 			<div class="un-logo" data-_section11-5100="opacity:0;bottom:0px;" data-_section11-5200="opacity:1;bottom:20px;"></div>
-			<div class="un-logo-text" data-_section11-5100="opacity:0;bottom:0px;" data-_section11-5200="opacity:1;bottom:20px;"></div>
+			<!--<div class="un-logo-text" data-_section11-5100="opacity:0;bottom:0px;" data-_section11-5200="opacity:1;bottom:20px;"></div>-->
 		</div>
 	</div>
 </div>

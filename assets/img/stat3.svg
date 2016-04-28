@@ -6,9 +6,9 @@
 <title>Group 25</title>
 <desc>Created with Sketch.</desc>
 <g data-bottom="opacity:0;" data--25-bottom="opacity:1;" id="Group-29" transform="translate(7.000000, 47.000000)">
-	<text transform="matrix(1 0 0 1 0 12)" fill="#902F01" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">during crisis</text>
+	<text transform="matrix(1 0 0 1 0 12)" fill="rgba(64,0,0,0.5)" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">during crisis</text>
 </g>
-<text data-bottom="opacity:0;" data--25-bottom="opacity:1;" transform="matrix(1 0 0 1 7 140)" fill="#902F01" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">before crisis</text>
+<text data-bottom="opacity:0;" data--25-bottom="opacity:1;" transform="matrix(1 0 0 1 7 140)" fill="rgba(64,0,0,0.5)" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">before crisis</text>
 <g id="Clip-4">
 </g>
 <g  data-bottom="opacity:0;" data--25-bottom="opacity:1;" >
@@ -139,12 +139,12 @@
 		c-2.93,2.762-5.839,5.505-8.834,8.329l-1.855,1.85V8.984H7.904v5.747l-0.85,0.848c-1.913,1.924-3.81,3.863-5.712,5.798
 		c-0.105,0.107-0.203,0.223-0.372,0.408h6.397v17.91h30.504V21.781h6.259c0.018-0.034,0.035-0.069,0.052-0.104
 		C36.999,14.641,29.815,7.604,22.611,0.547"/>
-	<path id="Fill-4" fill="#8E430D" d="M22.577,17.299c-2.529,0-4.585,2.092-4.585,4.664c0,0.236,0.017,0.472,0.051,0.702
+	<path id="Fill-4" fill="rgba(64,0,0,0.5)" d="M22.577,17.299c-2.529,0-4.585,2.092-4.585,4.664c0,0.236,0.017,0.472,0.051,0.702
 		c0.334,2.259,2.283,3.963,4.534,3.963c0.669,0,1.315-0.144,1.917-0.426c1.621-0.76,2.668-2.424,2.668-4.239
 		C27.162,19.392,25.105,17.299,22.577,17.299"/>
 </g>
 <g data--25-bottom="opacity:0;" data--50-bottom="opacity:1;">
-	<path id="Fill-8" fill="#8E430D" d="M68.967,21.846c0,0.235,0.017,0.471,0.051,0.701c0.319,2.156,2.11,3.802,4.229,3.948v-9.298
+	<path id="Fill-8" fill="rgba(64,0,0,0.5)" d="M68.967,21.846c0,0.235,0.017,0.471,0.051,0.701c0.319,2.156,2.11,3.802,4.229,3.948v-9.298
 		C70.86,17.359,68.967,19.379,68.967,21.846"/>
 	<path id="Fill-10" fill="rgba(64,0,0,0.5)" d="M63.733,9.774V8.437h-4.017v5.342l-1.453,1.448l-0.233,0.235
 		c-1.912,1.924-3.811,3.863-5.712,5.799c-0.105,0.106-0.203,0.222-0.372,0.408h6.397v17.91h14.903v-6.587H72.77v-2.047h-1.604

@@ -1,7 +1,8 @@
 angular.module('app').service("preloader",[ '$q', function($q) {
 
     return {
-        preload : preload
+        preload : preload,
+        foo : foo
     };
     function loadImg(img) {
         var defered = $q.defer();
@@ -13,6 +14,7 @@ angular.module('app').service("preloader",[ '$q', function($q) {
         return promise;
     }
     function preload(images) {
+
         var defered = $q.defer();
         var promise = defered.promise;
         var imgsLoadeds = [];
@@ -23,11 +25,17 @@ angular.module('app').service("preloader",[ '$q', function($q) {
                 if(!image.complete){
                     imgsLoadeds[key] = loadImg(image);
                 }
+
             });
             $q.all(imgsLoadeds).then(function(){
                 defered.resolve();
             });   
         } 
         return promise;
+    }
+ 
+    function foo(){
+
+        return Math.random(1);
     }
 }]);

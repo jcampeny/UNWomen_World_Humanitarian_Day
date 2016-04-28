@@ -7,7 +7,6 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 		setScroll();
 
 	});
-
 	
 	angular.element($document).ready(function () {
 		setScroll();
@@ -47,15 +46,15 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 	});
 	function setScroll(){
 	    $scope.scrollToMobile = {
-			section1 : $('#section1').height()/2,
-			section2 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height())/2,
-			section3 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height()+ $('#section7').height())/2,
-			section4 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height()+ $('#section7').height()+ $('#section8').height() + $('#section9').height()+ $('#section10').height()+ 4300)/2,
+			section1 : ($('#section1').height()/2) + 50,
+			section2 : (($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height())/2) + 60,
+			section3 : (($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height()+ $('#section7').height())/2) + 130,
+			section4 : (($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height()+ $('#section7').height()+ $('#section8').height() + $('#section9').height()+ $('#section10').height())/2)+ 2180,
 		};
 	    $scope.scrollToDesktop = {
-			section1 : $('#section1').height()/2,
-			section2 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ 350)/2,
-			section3 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height() + 350)/2,
+			section1 : (($('#section1').height())/2) + 650,
+			section2 : (($('#section1').height() + $('#section2').height() + $('#section3').height())/2) + 650,
+			section3 : (($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height())/2)  + 550,
 			section4 : (($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height() + 350)/2)+ 6900,
 		};
 	}
@@ -99,18 +98,24 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 .run(["snSkrollr",'deviceDetector', function(snSkrollr,deviceDetector) {
 	setTimeout(function() {
 		skrollrInit(snSkrollr, deviceDetector);
-	}, 500);
+	}, 500);//loading
 	
 }]);
-app.directive('burgerMenu', function($document){
+app.directive('burgerMenu', function($document, $timeout){
 	return {
 		restrict: 'E',
 		link: function (s, e, a){
 			s.clicked=true;
 			var open = false;
 			var animated = false;	
-
+			$('.scroll-burger').on('touchstart', function() {
+				animateBurger();
+				TweenLite.to('#menu-burger', 0.5, {top: '-60px'});
+			});
 			e.bind('touchstart click', function(){
+				animateBurger();
+			});
+			function animateBurger(){
 				if(!animated){
 					animated = true;
 					var h = $('#section1').offset();
@@ -132,10 +137,6 @@ app.directive('burgerMenu', function($document){
 						TweenLite.set('#menu-mobile',{"z-index": 19});
 						TweenLite.to('#menu-mobile', 0.5, {opacity: 1});
 						TweenLite.to(e, 0.5, {color: color});
-
-						/*TweenLite.to('.line1', 0.5, {rotation: 45, transformOrigin:"left 50%", left: "39%", top: "29%"});
-						TweenLite.to('.line2', 0.5, {rotationY: 90, top: "47%", left: "38%"});
-						TweenLite.to('.line3', 0.5, {rotation: -45,left: "33%", top: "47%", onComplete: function(){animated=false;}});	*/				
 					}else{
 						if(h.top > -400){
 							color = 'rgb(255,255,255)';
@@ -153,12 +154,9 @@ app.directive('burgerMenu', function($document){
 						TweenLite.set('#menu-mobile',{"z-index": -1});
 						TweenLite.to('#menu-mobile', 0.5, {opacity: 0});
 						TweenLite.to(e, 0.5, {color: "rgb(255,255,255)"});
-						/*TweenLite.to('.line1', 0.5, {rotation: 0, transformOrigin:"0", left: "35%", top: "36%"});
-						TweenLite.to('.line2', 0.5, {rotationY: 0, top: "48%", left: "35%"});
-						TweenLite.to('.line3', 0.5, {rotation: 0,left: "35%", top: "60%", onComplete: function(){animated=false;}});*/	
 					}
-					}	
-			});
+				}	
+			}
 		}
 	};
 });
@@ -170,6 +168,7 @@ app.directive('slide',function(scrollService, $document) {
 			var actual = 0;
 			var total = sections.length-1;
 			var slideMoving = false;
+
 			angular.forEach(sections, function(value, key) {
 				var opacity = "0";
 				if(key===0){
@@ -185,13 +184,26 @@ app.directive('slide',function(scrollService, $document) {
 				//var direction = scrollService.getDirectionOnTouchMove(e);
 				//moveSlide(direction);
 			});*/
+			$('.right-arrow').bind('click', function(){
+				moveSlide('right', false);
+			});
+			$('.left-arrow').bind('click', function(){
+				moveSlide('left', false);
+			});
 			$('.arrow-right').bind('click', function(){
-				moveSlide('right');
+				moveSlide('right', true);
 			});
 			$('.arrow-left').bind('click', function(){
-				moveSlide('left');
+				moveSlide('left', true);
 			});
-			function moveSlide(direction){
+			
+			function moveSlide(direction, isMobile){
+				var svg = {
+					second : e[0].querySelector('.to-show-2'),
+					third : e[0].querySelector('.to-show-3'),
+					fourth : e[0].querySelector('.to-show-4'),
+					fifth : e[0].querySelector('.to-show-5')
+				};
 				if(!slideMoving){
 					slideMoving = true;
 					var next;
@@ -202,26 +214,65 @@ app.directive('slide',function(scrollService, $document) {
 						}else{
 							next = 0;
 						}
+						
+			
 						//TweenLite.set(sections[next], {left: "100%"});
 						//TweenLite.to(sections[next], time, {left: "0%"});
 						//TweenLite.to(sections[actual], time, {left: "-120%", onComplete: function() {slideMoving = false;}});
 						TweenLite.to(sections[next], time,{opacity: "1", delay: time});
 						TweenLite.to(sections[actual], time,{opacity: "0", onComplete: function() {slideMoving = false;}});
+						//var queryRight = e[0].querySelector('.to-show-'+ (next+1));
+						//TweenLite.to(queryRight, time,{opacity: "1", delay: time});
 						actual = next;
 					}else if(direction == "left"){
 						if(actual > 0){
 							next = actual-1;	
 						}else{
-							next = 2;
+							next = 4;
 						}
 						//TweenLite.set(sections[next], {left: "-100%"});
 						//TweenLite.to(sections[next], time, {left: "0%"});
 						//TweenLite.to(sections[actual], time, {left: "120%", onComplete: function() {slideMoving = false;}});
 						TweenLite.to(sections[next], time,{opacity: "1", delay: time});
 						TweenLite.to(sections[actual], time,{opacity: "0", onComplete: function() {slideMoving = false;}});
+						//var queryLeft = e[0].querySelector('.to-show-'+ (next+1));
+						//TweenLite.to(queryLeft, time,{opacity: "1", delay: time});
 						actual = next;
 					}else{
 						slideMoving = false;
+					}
+					if(!isMobile){
+						switch(actual){
+							case 1:
+								TweenLite.to(svg.second, time,{opacity: "1", delay: time});
+								TweenLite.to(svg.third, time,{opacity: "0", delay: time});
+								TweenLite.to(svg.fourth, time,{opacity: "0", delay: time});
+								TweenLite.to(svg.fifth, time,{opacity: "0", delay: time});
+								break;
+							case 2:
+								TweenLite.to(svg.second, time,{opacity: "1", delay: time});
+								TweenLite.to(svg.third, time,{opacity: "1", delay: time});
+								TweenLite.to(svg.fourth, time,{opacity: "0", delay: time});
+								TweenLite.to(svg.fifth, time,{opacity: "0", delay: time});
+								break;
+							case 3:
+								TweenLite.to(svg.second, time,{opacity: "1", delay: time});
+								TweenLite.to(svg.third, time,{opacity: "1", delay: time});
+								TweenLite.to(svg.fourth, time,{opacity: "1", delay: time});
+								TweenLite.to(svg.fifth, time,{opacity: "0", delay: time});
+								break;
+							case 4:
+								TweenLite.to(svg.second, time,{opacity: "1", delay: time});
+								TweenLite.to(svg.third, time,{opacity: "1", delay: time});
+								TweenLite.to(svg.fourth, time,{opacity: "1", delay: time});
+								TweenLite.to(svg.fifth, time,{opacity: "1", delay: time});
+								break;
+							default:
+								TweenLite.to(svg.second, time,{opacity: "0", delay: time});
+								TweenLite.to(svg.third, time,{opacity: "0", delay: time});
+								TweenLite.to(svg.fourth, time,{opacity: "0", delay: time});
+								TweenLite.to(svg.fifth, time,{opacity: "0", delay: time});
+						}
 					}
 				}
 			}
@@ -268,7 +319,6 @@ app.directive('screenDetector', ['$window', '$document','$timeout', 'animateServ
 		},
 		link : function(s, e, a) {
 
-		TweenLite.set(e,{opacity: 0});//
 
 		var animated = false;
 
@@ -314,10 +364,10 @@ app.directive('stateMenuDesktop', ['$document', function ($document){
 		restrict : 'AC',
 		link : function(s,e,a) {
 		    var scrollStates = {
-				section1 : $('#section1').height()/2,
-				section2 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ 350)/2,
-				section3 : ($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height() + 350)/2,
-				section4 : (($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height() + 350)/2)+ 6900,
+				section1 : (($('#section1').height())/2),
+				section2 : (($('#section1').height() + $('#section2').height() + $('#section3').height())/2),
+				section3 : (($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height())/2),
+				section4 : (($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height() + 350)/2)+ 5300,
 			};
 			$document.bind('mousewheel DOMMouseScroll touchmove scroll', function(){
 				var scrollTop = $(document).scrollTop() / 2;
@@ -409,7 +459,7 @@ function skrollrInit(snSkrollr, deviceDetector){
 		snSkrollr.init({
 			constants: {
 				section11: function(){
-					return 5000;
+					return 17000;
 				}
 			}
 		});	
