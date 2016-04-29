@@ -1,15 +1,20 @@
 var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', 'ngAnimate', 'ngResource', 'sn.skrollr', 'ng.deviceDetector'])
-.controller("mainController", [ '$scope', 'ArrayService', 'deviceDetector', '$document', 'scrollService','snSkrollr','$window','$timeout', function($scope, ArrayService, deviceDetector, $document, scrollService, snSkrollr, $window, $timeout) {
+.controller("mainController", [ '$scope', 'ArrayService', 'deviceDetector', '$document', 'scrollService','snSkrollr','$window','$timeout','$location', function($scope, ArrayService, deviceDetector, $document, scrollService, snSkrollr, $window, $timeout, $location) {
 
 	angular.element($window).on('resize' , function() {
+		if(deviceDetector.isMobile()){
+			$location.hash('');
+		}
 		snSkrollr.destroy();
 		skrollrInit(snSkrollr, deviceDetector);
 		setScroll();
-
+		TweenLite.set('.lang',{opacity: 1});
 	});
 	
 	angular.element($document).ready(function () {
+			setTimeout(function() {
 		setScroll();
+			}, 3000);//loading
     });
 
 	var scrolling = false;
@@ -51,6 +56,12 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 			section3 : (($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height()+ $('#section7').height())/2) + 130,
 			section4 : (($('#section1').height() + $('#section2').height() + $('#section3').height()+ $('#section4').height()+ $('#section5').height() + $('#section6').height()+ $('#section7').height()+ $('#section8').height() + $('#section9').height()+ $('#section10').height())/2)+ 2180,
 		};
+		/*$scope.scrollToMobile = {
+			section1 : 250,
+			section2 : 950,
+			section3 : 2850,
+			section4 : 5250,
+		};*/
 	    $scope.scrollToDesktop = {
 			section1 : (($('#section1').height())/2) + 650,
 			section2 : (($('#section1').height() + $('#section2').height() + $('#section3').height())/2) + 650,
@@ -98,7 +109,7 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 .run(["snSkrollr",'deviceDetector', function(snSkrollr,deviceDetector) {
 	setTimeout(function() {
 		skrollrInit(snSkrollr, deviceDetector);
-	}, 500);//loading
+	}, 3000);//loading
 	
 }]);
 app.directive('burgerMenu', function($document, $timeout){
@@ -374,6 +385,7 @@ app.directive('stateMenuDesktop', ['$document', function ($document){
 				var states = e.find("a");
 				var time = 0.2;
 				var actualState; 
+				
 				if(scrollStates.section2 > scrollTop+100){
 					TweenLite.to(states[0], time,{opacity: "1"});
 					actualState = 0;
@@ -439,7 +451,7 @@ function skrollrInit(snSkrollr, deviceDetector){
 	  		},
 	  		section11 : function(){
 	  			var h = $("#section1").height() + $("#section2").height() + $("#section3").height() + $("#section4").height() + $("#section5").height()+ $("#section6").height()+$("#section7").height()+$("#section8").height()+$("#section9").height()+$("#section10").height(); // para que phantom no pete...
-	  			
+	  			console.log(h);
 	  			/*console.log($("#section1").height());
 				console.log($("#section2").height());
 	  			console.log($("#section3").height());
