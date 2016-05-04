@@ -7,21 +7,49 @@
 <desc>Created with Sketch.</desc>
 <g id="Group-45" transform="translate(0.000000, 258.000000)">
 	<g enable-background="new    ">
-		<text data-bottom="opacity:0;" data--90-bottom="opacity:1;" transform="matrix(1 0 0 1 100.1934 12)" fill="#902F01" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">conflict-affected </text>
+		<text data-anchor-target="#section5"
+			data--5400-top="opacity:0;"
+			data--5500-top="opacity:1;"
+			data--6400-top="opacity:1;"
+			data--7400-top="opacity:0;" transform="matrix(1 0 0 1 100.1934 12)" fill="rgba(64,0,0,0.5)" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">países afectados </text>
 	</g>
 	<g enable-background="new    ">
-		<text data-bottom="opacity:0;" data--90-bottom="opacity:1;" transform="matrix(1 0 0 1 118.8418 27)" fill="#902F01" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">countries</text>
+		<text data-anchor-target="#section5"
+			data--5400-top="opacity:0;"
+			data--5500-top="opacity:1;"
+			data--6400-top="opacity:1;"
+			data--7400-top="opacity:0;" transform="matrix(1 0 0 1 98.8418 27)" fill="rgba(64,0,0,0.5)" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">por conflictos</text>
 	</g>
 </g>
-<rect class="rect-patch-for-saphari" data-bottom="transform: matrix(1.00,0.00,0.00,0.10,0,220); opacity:0;" data--90-bottom="transform: matrix(1.00,0.00,0.00,1,0,0); opacity:0.5;" id="Rectangle-73-Copy" x="129" y="106" fill="#400000" width="30" height="140"/>
+<rect data-anchor-target="#section5"
+	data--5400-top="transform: matrix(1.00,0.00,0.00,0.10,0,220); opacity:0;"
+	data--6000-top="transform: matrix(1.00,0.00,0.00,1,0,0); opacity:0.5;"
+	data--6400-top="transform: matrix(1.00,0.00,0.00,1,0,0); opacity:0.5;"
+	data--7400-top="transform: matrix(1.00,0.00,0.00,0.10,0,220); opacity:0;" id="Rectangle-73-Copy" x="129" y="106" fill="#400000" width="30" height="140" style="-webkit-transform: matrix(1.00,0.00,0.00,1,0,0);"/>
 <g opacity="0.3">
-	<text data-bottom="opacity:0;" data--90-bottom="opacity:1;" transform="matrix(1 0 0 1 0.8979 270)" fill="#400000" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">conflict-free </text>
+	<text data-anchor-target="#section5"
+			data--5400-top="opacity:0;"
+			data--5500-top="opacity:1;"
+			data--6400-top="opacity:1;"
+			data--7400-top="opacity:0;"  transform="matrix(1 0 0 1 8.8979 270)" fill="#400000" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">países</text>
 </g>
 <g opacity="0.3">
-	<text data-bottom="opacity:0;" data--90-bottom="opacity:1;" transform="matrix(1 0 0 1 8.8418 285)" fill="#400000" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">countries</text>
+	<text data-anchor-target="#section5"
+			data--5400-top="opacity:0;"
+			data--5500-top="opacity:1;"
+			data--6400-top="opacity:1;"
+			data--7400-top="opacity:0;"  transform="matrix(1 0 0 1 8.8418 285)" fill="#400000" font-family="'Libre Baskerville'" font-size="12" style="font-style:italic;">sin conflictos</text>
 </g>
-<rect class="rect-patch-for-saphari" data-bottom="transform: matrix(1.00,0.00,0.00,0.10,0,220); opacity:0;" data--90-bottom="transform: matrix(1.00,0.00,0.00,1,0,0); opacity:0.3;" id="Rectangle-73" x="19" y="187" fill="#400000" width="30" height="59.23"/>
-<g data--240-bottom="opacity:0;" data--290-bottom="opacity:1;">
+<rect  data-anchor-target="#section5"
+	data--5400-top="transform: matrix(1.00,0.00,0.00,0.10,0,220); opacity:0;"
+	data--6000-top="transform: matrix(1.00,0.00,0.00,1,0,0); opacity:0.3;"
+	data--6400-top="transform: matrix(1.00,0.00,0.00,1,0,0); opacity:0.3;"
+	data--7400-top="transform: matrix(1.00,0.00,0.00,0.10,0,220); opacity:0;"  id="Rectangle-73" x="19" y="187" fill="#400000" width="30" height="59.23" style="-webkit-transform: matrix(1.00,0.00,0.00,1,0,0);"/>
+<g   data-anchor-target="#section5"
+	data--5950-top="opacity:0;"
+	data--6050-top="opacity:1;"
+	data--6400-top="opacity:1;"
+	data--7400-top="opacity:0;">
 	<g opacity="0.4">
 		<path fill="#400000" d="M158.387,26.77c0.947-0.406,1.896-0.813,2.908-1.246c-0.155-0.061-0.254-0.102-0.353-0.137
 			c-5.754-2.06-11.508-4.121-17.265-6.171c-0.072-0.026-0.163-0.04-0.251-0.04c-0.101,0-0.202,0.017-0.29,0.047
@@ -50,7 +78,11 @@
 		L137.61,9.241c2.207-0.822,4.597-1.274,7.088-1.274c11.21,0,20.325,9.09,20.325,20.263
 		C165.023,34.784,161.808,40.877,156.598,44.646z"/>
 </g>
-<g data--150-bottom="opacity:0;" data--200-bottom="opacity:1;">
+<g   data-anchor-target="#section5"
+	data--5950-top="opacity:0;"
+	data--6050-top="opacity:1;"
+	data--6400-top="opacity:1;"
+	data--7400-top="opacity:0;">
 	<g opacity="0.2">
 		<path fill="#400000" d="M48.077,107.064c0.947-0.406,1.896-0.813,2.908-1.246c-0.155-0.061-0.254-0.102-0.353-0.137
 			c-5.754-2.06-11.508-4.121-17.265-6.171c-0.072-0.026-0.163-0.04-0.251-0.04c-0.101,0-0.202,0.017-0.29,0.047

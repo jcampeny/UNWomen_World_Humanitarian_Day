@@ -5,4 +5,4 @@
 #RewriteRule ^([A-Za-z0-9/_-]*)$               /index.html [NC,L]
 
 RewriteEngine on
-RewriteCond %{REQUEST_URI} !^/index.html$
+RewriteCond %{REQUEST_URI} !^/es/index.html$

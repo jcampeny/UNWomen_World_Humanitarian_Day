@@ -21,8 +21,17 @@ $font-1: 'Libre Baskerville', serif;
 			left: 25%;
     		width: 50%;
 		}
-
-
+		@media (max-height: 750px){
+			h3.title{
+				font-size: 22px;
+				margin-bottom: 18px;
+				line-height: 28px;	
+			}
+			div.text{
+				font-size: 14px;
+				line-height: 20px;
+			}
+		}
 	}
 	.section3{
 		position: fixed;
@@ -40,6 +49,9 @@ $font-1: 'Libre Baskerville', serif;
 				@media (max-height: 800px) {
 					font-size: 50px;
 				}
+				@media (max-height: 720px) {
+					font-size: 40px;
+				}
 			}
 			.number-stat{
 				font-size: 16px;
@@ -50,8 +62,8 @@ $font-1: 'Libre Baskerville', serif;
 			}
 			.number-content{
 				font-size: 16px;
-				color: #7E3327;
-				width: 35%;
+				color: rgb(64,0,0);
+				width: 38%;
 				margin: 0 auto;
 				position: relative;
 				margin-bottom: 20px;
@@ -61,6 +73,9 @@ $font-1: 'Libre Baskerville', serif;
 				}
 				@media (max-width: 1000px) {
 					width: 90%;
+				}
+				@media (max-height: 720px) {
+					width: 50%;
 				}
 			}
 		}
@@ -158,7 +173,7 @@ $font-1: 'Libre Baskerville', serif;
 		}
 		div{
 			position: absolute;
-		    width: calc(100% + 0px);
+		    width: calc(97% + 0px);
 		    left: 0px;
 		    top: 100%;
 		    height: 0px;
@@ -172,11 +187,22 @@ $font-1: 'Libre Baskerville', serif;
 	    	    left: 50%;
 	    	    @include transform(translateX(-50%));
 		    }
-		    p{
+		    a{
 		    	margin: 0px 0 0px 12px;
 		    	height: 36px;
 		    	line-height: 34px;
+		    	width: 100%;
+    			position: absolute;
+    			@include transition(all .3s);
+		    	&:hover{
+		    		text-decoration: none;
+		    		color: white !important;
+		    	}
+				&.second{
+					top: 50%;
+				}
 		    }
+
 		}
 		span{
 			padding-right: 35px;
@@ -202,7 +228,7 @@ $font-1: 'Libre Baskerville', serif;
 	header{
 		position: fixed;
 		height: 100%;
-		width: 15%;
+		width: 12%;
 		top:0; 
 		z-index: 19;
 		@media (max-width: 1000px) {
@@ -244,6 +270,26 @@ $font-1: 'Libre Baskerville', serif;
 		opacity: 0;
 		position: fixed;
 		background-image: url("../assets/img/un-logo.png");
+		width: 50%;
+		height: 50px;
+		right: 40px;
+		top:3%;
+		background-repeat: no-repeat;
+		background-position: right;
+	}
+	.un-logo-fixed-fr{
+		position: fixed;
+		background-image: url("../assets/img/un-logo-fr.png");
+		width: 50%;
+		height: 50px;
+		right: 40px;
+		top:3%;
+		background-repeat: no-repeat;
+		background-position: right;
+	}
+		.un-logo-fixed-es{
+		position: fixed;
+		background-image: url("../assets/img/un-logo-es.png");
 		width: 50%;
 		height: 50px;
 		right: 40px;
@@ -387,6 +433,17 @@ $font-1: 'Libre Baskerville', serif;
 					font-size: 16px;
 					line-height: 26px;
 				}
+				@media (max-height: 750px){
+					h3.title{
+						font-size: 22px;
+						margin-bottom: 18px;
+						line-height: 28px;	
+					}
+					div.text{
+						font-size: 14px;
+						line-height: 20px;
+					}
+				}
 			}
 		}
 	}
@@ -397,22 +454,6 @@ $font-1: 'Libre Baskerville', serif;
     	min-height: 50vh;
 		@media (max-width: 1000px) {
 			width: 75%;
-		}
-		span.left-arrow{
-			width: 50%;
-			height: 100%;
-			left:0; top: 0;
-			position: absolute;
-			z-index: 18;
-			cursor: url(../assets/img/cursor-left.png), auto;
-		}
-		span.right-arrow{
-			width: 150%;
-			height: 100%;
-			left: 50%; top: 0;
-			position: absolute;
-			z-index: 18;
-			cursor: url(../assets/img/cursor-right.png), auto;
 		}
     	@include transform(translateY(-50%));
 
@@ -446,26 +487,37 @@ $font-1: 'Libre Baskerville', serif;
 				font-weight: normal;
 			}
 		}
-		&:hover {
+		/*&:hover {
 			.arrow-right,
 			.arrow-left{
 			    opacity: 1;
 			}
-		}
+		}*/
 		.arrow-right,
 		.arrow-left{
 			position: absolute;
-		    top: 70%;
+		    top: 45%;
 		    z-index: 2;
 		    cursor: pointer;
-		    opacity: 0;
-		    @include transition(opacity .5s);
+		    width: 72px;
+		    height: 40px;
+		    .no-hover{opacity: 1;}
+		    .hover{opacity: 0;}
+		    @include transition(all .5s);
+		    img{
+		    	position: absolute;
+		    	@include transition(all .5s);
+		    }
+		    &:hover{
+		    	.hover{opacity: 1;}
+		    	.no-hover{opacity: 0;}
+		    }
 		}
 		.arrow-right{
-		    right: 10px;
+		    right: 0px;
 		}
 		.arrow-left{
-		    left: 10px;
+		    left: 0px;
 		    @include transform(scaleX(-1));
 		}
 		.to-show-2,

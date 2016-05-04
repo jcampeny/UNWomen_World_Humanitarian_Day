@@ -6,6 +6,7 @@ angular.module('app').directive('appSection', function (deviceDetector, $window,
     controller: function ($scope) {
     },
     templateUrl: function (e, a){
+
       var templateName = "../app/components/section/section.html";
       var lastState;
       angular.element($window).on('resize' , function() {

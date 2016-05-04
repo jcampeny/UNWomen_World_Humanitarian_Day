@@ -2,15 +2,52 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 .controller("mainController", [ '$scope', 'ArrayService', 'deviceDetector', '$document', 'scrollService','snSkrollr','$window','$timeout','$location', function($scope, ArrayService, deviceDetector, $document, scrollService, snSkrollr, $window, $timeout, $location) {
 
 	angular.element($window).on('resize' , function() {
-		if(deviceDetector.isMobile()){
-			$location.hash('');
-		}
+		
+		
 		snSkrollr.destroy();
 		skrollrInit(snSkrollr, deviceDetector);
 		setScroll();
 		TweenLite.set('.lang',{opacity: 1});
 	});
-	
+
+	$scope.share0 = function () {
+	    var lang = $(".share0").attr("data-lang");
+
+	    var links = {
+	    	en : "http://www.unwomen.org",
+	    	es : "http://www.onumujeres.org",
+	    	fr : "http://www.onufemmes.org"
+	    };
+
+	    var url = encodeURI(links[lang]);
+	    window.open(url);
+	};
+
+	$scope.share1 = function () {
+	    var lang = $(".share1").attr("data-lang");
+
+	    var titles = {
+	    	en : "Infographic: Closing the Gender Gap in Humanitarian Action",
+	    	es : "Infografía: Cerrando la brecha de género en la acción humanitaria",
+	    	fr : "Infographique : Éliminer les disparités entre les sexes dans les actions humanitaires"
+	    };
+
+	    var url = encodeURI("http://interactive.unwomen.org/multimedia/infographic/humanitarianaction/"+lang+"/index.html");
+	    window.open("https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodeURIComponent(titles[lang]),"_blank");
+	};
+
+	$scope.share2 = function () {
+		var lang = $(".share2").attr("data-lang");
+
+		var content = {
+			en : "Infographic: Closing the Gender Gap in Humanitarian Action http://ow.ly/4nkTME #ShareHumanity #Planet5050 v @UN_Women",
+			es : "Infografía: Cerrando la brecha de género en la acción humanitaria http://ow.ly/4nkTRW #ShareHumanity #Planet5050 v @ONUMujeres",
+			fr : "Infographique : Éliminer les disparités entre les sexes dans les actions humanitaires http://ow.ly/4nkTTp #ShareHumanity #Planet5050 v @ONUFemmes"
+		};
+		window.open("http://twitter.com/home/?status="+encodeURIComponent(content[lang]),"_blank");
+
+	};
+
 	angular.element($document).ready(function () {
 			setTimeout(function() {
 		setScroll();
@@ -76,14 +113,13 @@ var app = angular.module("app",['templates-dist', 'ui.router', 'ui.bootstrap', '
 }])
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$resourceProvider', '$httpProvider',
 	function($stateProvider, $urlRouterProvider, $locationProvider, $resourceProvider, $httpProvider) {
-		$urlRouterProvider.otherwise("/");
+		$urlRouterProvider.otherwise("");
 
 		$stateProvider
-			.state('app', {url:'/', templateUrl: '../app/core/main.html', abstract: true})
+			.state('app', {url:'', templateUrl: '../app/core/main.html', abstract: true})
 			.state('app.section', {url:'', template: '<app-section></app-section><app-section-fixed></app-section-fixed>'});
 
-
-		$locationProvider.html5Mode(true);
+		//$locationProvider.html5Mode(true);
 		$resourceProvider.defaults.stripTrailingSlashes = false;
 
 }])
@@ -195,10 +231,10 @@ app.directive('slide',function(scrollService, $document) {
 				//var direction = scrollService.getDirectionOnTouchMove(e);
 				//moveSlide(direction);
 			});*/
-			$('.right-arrow').bind('click', function(){
+			$('.arrow-right-desktop').bind('click', function(){
 				moveSlide('right', false);
 			});
-			$('.left-arrow').bind('click', function(){
+			$('.arrow-left-desktop').bind('click', function(){
 				moveSlide('left', false);
 			});
 			$('.arrow-right').bind('click', function(){
@@ -451,7 +487,6 @@ function skrollrInit(snSkrollr, deviceDetector){
 	  		},
 	  		section11 : function(){
 	  			var h = $("#section1").height() + $("#section2").height() + $("#section3").height() + $("#section4").height() + $("#section5").height()+ $("#section6").height()+$("#section7").height()+$("#section8").height()+$("#section9").height()+$("#section10").height(); // para que phantom no pete...
-	  			console.log(h);
 	  			/*console.log($("#section1").height());
 				console.log($("#section2").height());
 	  			console.log($("#section3").height());
